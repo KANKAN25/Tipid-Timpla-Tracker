@@ -1,4 +1,4 @@
-C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/mainwindow.h \
+C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/EWIEGA46WW/moc_filterarea.cpp: C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/filterarea.h \
   C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/moc_predefs.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/q20memory.h \
@@ -142,10 +142,8 @@ C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_b
   C:/Qt/6.7.0/mingw_64/include/QtGui/qtransform.h \
   C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs_win.h \
-  C:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
-  C:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qsizepolicy.h \
-  C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

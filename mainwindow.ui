@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>758</width>
-    <height>459</height>
+    <width>761</width>
+    <height>461</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QFrame" name="fullframe">
       <property name="font">
@@ -269,7 +269,7 @@
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>150</y>
+             <y>160</y>
              <width>104</width>
              <height>82</height>
             </rect>
@@ -281,30 +281,6 @@
             <enum>QFrame::Raised</enum>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
-            <item row="0" column="0">
-             <widget class="QLabel" name="Price_2">
-              <property name="font">
-               <font>
-                <family>Lato Semibold</family>
-                <pointsize>10</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Rating</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QSlider" name="horizontalSlider">
-              <property name="maximum">
-               <number>5</number>
-              </property>
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-             </widget>
-            </item>
             <item row="2" column="0">
              <widget class="QLabel" name="Price_3">
               <property name="font">
@@ -322,13 +298,37 @@
               </property>
              </widget>
             </item>
+            <item row="1" column="0">
+             <widget class="QSlider" name="horizontalSlider">
+              <property name="maximum">
+               <number>5</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="Price_2">
+              <property name="font">
+               <font>
+                <family>Lato Semibold</family>
+                <pointsize>10</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Rating</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </widget>
           <widget class="QFrame" name="frame_3">
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>240</y>
+             <y>260</y>
              <width>120</width>
              <height>51</height>
             </rect>
@@ -359,7 +359,7 @@
              <string>Cuisines</string>
             </property>
            </widget>
-           <widget class="QLineEdit" name="lineEdit">
+           <widget class="QLineEdit" name="lineEdit_2">
             <property name="geometry">
              <rect>
               <x>0</x>
@@ -368,15 +368,133 @@
               <height>22</height>
              </rect>
             </property>
+            <property name="placeholderText">
+             <string>search cuisine</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QFrame" name="frame_4">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>330</y>
+             <width>120</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QLabel" name="Price_5">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>61</width>
+              <height>16</height>
+             </rect>
+            </property>
             <property name="font">
              <font>
-              <family>Lato</family>
+              <family>Lato Semibold</family>
+              <pointsize>10</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
-             <string>(insert cuisine)</string>
+             <string>Location</string>
             </property>
            </widget>
+           <widget class="QComboBox" name="comboBox">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>101</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>UP Cebu</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QFrame" name="frame_5">
+            <property name="geometry">
+             <rect>
+              <x>90</x>
+              <y>10</y>
+              <width>120</width>
+              <height>51</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QFrame" name="Pricearea_2">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>390</y>
+             <width>101</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="Price_7">
+              <property name="font">
+               <font>
+                <family>Lato Semibold</family>
+                <pointsize>10</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Eatery Status</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioButton_4">
+              <property name="font">
+               <font>
+                <family>Lato</family>
+               </font>
+              </property>
+              <property name="text">
+               <string>Open</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioButton_5">
+              <property name="font">
+               <font>
+                <family>Lato</family>
+               </font>
+              </property>
+              <property name="text">
+               <string>Closed</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </widget>
         </widget>
