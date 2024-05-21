@@ -17,7 +17,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_verticalScrollBar_valueChanged(int value);
+    //REAL
+
+    void on_horizontalSlider_valueChanged(int value);
 
 private:
     Ui::MainWindow *ui;

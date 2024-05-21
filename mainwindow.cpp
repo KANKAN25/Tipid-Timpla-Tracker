@@ -7,8 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    connect(ui->verticalScrollBar, &QScrollBar::valueChanged, this, &MainWindow::on_verticalScrollBar_valueChanged);
+    this->setFixedSize(761,461);
 }
 
 MainWindow::~MainWindow()
@@ -16,12 +15,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_verticalScrollBar_valueChanged(int value)
+void MainWindow::on_horizontalSlider_valueChanged(int value)
 {
-    ui->filterarea->move(0, -value);
+    qDebug() << value;
+    ui -> Rating -> setText(QString::number(value));
 }
-
-
-
-
 
