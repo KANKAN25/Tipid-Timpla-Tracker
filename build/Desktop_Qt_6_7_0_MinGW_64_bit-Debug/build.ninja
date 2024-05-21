@@ -73,6 +73,14 @@ build CMakeFiles/Database.dir/mainwindow.cpp.obj: CXX_COMPILER__Database_unscann
   OBJECT_DIR = CMakeFiles\Database.dir
   OBJECT_FILE_DIR = CMakeFiles\Database.dir
 
+build CMakeFiles/Database.dir/login.cpp.obj: CXX_COMPILER__Database_unscanned_Debug C$:/Users/hp/OneDrive/Documents/Repo$ F/qt-test/login.cpp || cmake_object_order_depends_target_Database
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\Database.dir\login.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/include" -isystem C:/Qt/6.7.0/mingw_64/include/QtCore -isystem C:/Qt/6.7.0/mingw_64/include -isystem C:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\Database.dir
+  OBJECT_FILE_DIR = CMakeFiles\Database.dir
+
 build CMakeFiles/Database.dir/Database_autogen/EWIEGA46WW/qrc_images.cpp.obj: CXX_COMPILER__Database_unscanned_Debug C$:/Users/hp/OneDrive/Documents/Repo$ F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/EWIEGA46WW/qrc_images.cpp || cmake_object_order_depends_target_Database
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\Database.dir\Database_autogen\EWIEGA46WW\qrc_images.cpp.obj.d
@@ -89,7 +97,7 @@ build CMakeFiles/Database.dir/Database_autogen/EWIEGA46WW/qrc_images.cpp.obj: CX
 #############################################
 # Link the executable Database.exe
 
-build Database.exe: CXX_EXECUTABLE_LINKER__Database_Debug CMakeFiles/Database.dir/Database_autogen/mocs_compilation.cpp.obj CMakeFiles/Database.dir/main.cpp.obj CMakeFiles/Database.dir/mainwindow.cpp.obj CMakeFiles/Database.dir/Database_autogen/EWIEGA46WW/qrc_images.cpp.obj | C$:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.0/mingw_64/lib/libQt6EntryPoint.a || Database_autogen Database_autogen_timestamp_deps
+build Database.exe: CXX_EXECUTABLE_LINKER__Database_Debug CMakeFiles/Database.dir/Database_autogen/mocs_compilation.cpp.obj CMakeFiles/Database.dir/main.cpp.obj CMakeFiles/Database.dir/mainwindow.cpp.obj CMakeFiles/Database.dir/login.cpp.obj CMakeFiles/Database.dir/Database_autogen/EWIEGA46WW/qrc_images.cpp.obj | C$:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.0/mingw_64/lib/libQt6EntryPoint.a || Database_autogen Database_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.7.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.7.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.7.0/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -176,7 +184,7 @@ build Database_autogen_timestamp_deps: phony CMakeFiles/Database_autogen_timesta
 #############################################
 # Utility command for Database_autogen
 
-build Database_autogen: phony CMakeFiles/Database_autogen Database_autogen/include/ui_mainwindow.h Database_autogen/timestamp Database_autogen/mocs_compilation.cpp Database_autogen_timestamp_deps
+build Database_autogen: phony CMakeFiles/Database_autogen Database_autogen/include/ui_mainwindow.h Database_autogen/include/ui_login.h Database_autogen/timestamp Database_autogen/mocs_compilation.cpp Database_autogen_timestamp_deps
 
 
 #############################################
@@ -201,13 +209,13 @@ build Database_autogen/EWIEGA46WW/qrc_images.cpp | ${cmake_ninja_workdir}Databas
 #############################################
 # Phony custom command for CMakeFiles\Database_autogen_timestamp_deps
 
-build CMakeFiles/Database_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/Database_autogen_timestamp_deps: phony C$:/Qt/6.7.0/mingw_64/./bin/uic.exe C$:/Qt/6.7.0/mingw_64/./bin/moc.exe C$:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.0/mingw_64/lib/libQt6Core.a
+build CMakeFiles/Database_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/Database_autogen_timestamp_deps: phony C$:/Qt/6.7.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.0/mingw_64/./bin/moc.exe C$:/Qt/6.7.0/mingw_64/./bin/uic.exe C$:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a
 
 
 #############################################
 # Phony custom command for CMakeFiles\Database_autogen
 
-build CMakeFiles/Database_autogen Database_autogen/include/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/Database_autogen ${cmake_ninja_workdir}Database_autogen/include/ui_mainwindow.h: phony Database_autogen/timestamp || Database_autogen_timestamp_deps
+build CMakeFiles/Database_autogen Database_autogen/include/ui_mainwindow.h Database_autogen/include/ui_login.h | ${cmake_ninja_workdir}CMakeFiles/Database_autogen ${cmake_ninja_workdir}Database_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}Database_autogen/include/ui_login.h: phony Database_autogen/timestamp || Database_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

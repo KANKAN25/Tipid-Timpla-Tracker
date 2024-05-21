@@ -17,9 +17,10 @@ public:
     ~MainWindow();
 
 private slots:
-    //REAL
 
     void on_horizontalSlider_valueChanged(int value);
+
+    void on_logout_clicked();
 
 private:
     Ui::MainWindow *ui;

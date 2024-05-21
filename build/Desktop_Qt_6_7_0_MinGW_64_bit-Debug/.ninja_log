@@ -1,93 +1,78 @@
 # ninja log v5
 1119	8153	7379197170827946	CMakeFiles/Database.dir/filterarea.cpp.obj	fe9e2d3017e5f870
-8	272	7379976109853670	Database_autogen/timestamp	6a9e069343789ee
-1325	10761	7379926780405953	CMakeFiles/Database.dir/Database_autogen/mocs_compilation.cpp.obj	4114d186af9cf0c2
+16	237	7380114399649038	Database_autogen/timestamp	6a9e069343789ee
+242	4331	7380114441441360	CMakeFiles/Database.dir/Database_autogen/mocs_compilation.cpp.obj	4114d186af9cf0c2
 1500	7879	7379869501401544	CMakeFiles/Database.dir/filter.cpp.obj	22435f59a913d6a6
-8	272	7379976109853670	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-8	272	7379976109853670	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-8	272	7379976109853670	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+16	237	7380114399649038	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+16	237	7380114399649038	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
+16	237	7380114399649038	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
 1334	10676	7379926779614638	CMakeFiles/Database.dir/main.cpp.obj	63d9b72ba56fc3b8
-294	5355	7379976160738812	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
-5355	5750	7379976164593535	Database.exe	8028f8a6d6cf3f87
+366	7786	7380113797964414	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
+7786	8554	7380113805534976	Database.exe	90d53efea02583e1
 1010	8583	7379204754229062	CMakeFiles/Database.dir/frame.cpp.obj	4992e3ac6a86b2f5
 529	5232	7379215082466068	CMakeFiles/Database.dir/form.cpp.obj	f26701f351d6b203
-9	1919	7379978701130010	build.ninja	49fc0346391712b3
-24	578	7379981696823247	Database_autogen/timestamp	6a9e069343789ee
-24	578	7379981696823247	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-24	578	7379981696823247	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-24	578	7379981696823247	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+5	2263	7380114507393282	build.ninja	49fc0346391712b3
 604	1098	7379981699210147	Database_autogen/EWIEGA46WW/qrc_images.cpp	6844bc12f6a2e6dd
 604	1098	7379981699210147	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/EWIEGA46WW/qrc_images.cpp	6844bc12f6a2e6dd
 1099	2439	7379981715237449	CMakeFiles/Database.dir/Database_autogen/EWIEGA46WW/qrc_images.cpp.obj	6dd277b86abbf13c
-1105	15376	7379981844784890	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
-15377	16154	7379981851871232	Database.exe	572732a1e7f33f8f
-12	360	7379982147795831	Database_autogen/timestamp	6a9e069343789ee
-12	360	7379982147795831	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-12	360	7379982147795831	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-12	360	7379982147795831	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-385	8206	7379982226204065	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
-8207	8812	7379982232234032	Database.exe	572732a1e7f33f8f
-12	300	7379983097438096	Database_autogen/timestamp	6a9e069343789ee
-12	300	7379983097438096	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-12	300	7379983097438096	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-12	300	7379983097438096	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-318	9048	7379983183765170	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
-9049	10439	7379983198773118	Database.exe	572732a1e7f33f8f
-14	2325	7379983853984720	Database_autogen/timestamp	6a9e069343789ee
-14	2325	7379983853984720	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-14	2325	7379983853984720	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-14	2325	7379983853984720	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-2355	14389	7379983978000514	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
-14391	14930	7379983983346172	Database.exe	572732a1e7f33f8f
-13	1525	7379984766316025	Database_autogen/timestamp	6a9e069343789ee
-13	1525	7379984766316025	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-13	1525	7379984766316025	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-13	1525	7379984766316025	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-1551	9126	7379984843491698	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
-9126	9566	7379984847880745	Database.exe	572732a1e7f33f8f
-14	549	7379985070617173	Database_autogen/timestamp	6a9e069343789ee
-14	549	7379985070617173	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-14	549	7379985070617173	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-14	549	7379985070617173	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-30	718	7379985188857855	Database_autogen/timestamp	6a9e069343789ee
-30	718	7379985188857855	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-30	718	7379985188857855	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-30	718	7379985188857855	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-743	8537	7379985267678588	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
-8538	9028	7379985272472738	Database.exe	572732a1e7f33f8f
-14	1298	7379985435496183	Database_autogen/timestamp	6a9e069343789ee
-14	1298	7379985435496183	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-14	1298	7379985435496183	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-14	1298	7379985435496183	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-1322	10188	7379985524154041	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
-10189	10929	7379985532868464	Database.exe	572732a1e7f33f8f
-16	457	7379985884105830	Database_autogen/timestamp	6a9e069343789ee
-16	457	7379985884105830	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-16	457	7379985884105830	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-16	457	7379985884105830	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-481	7984	7379985960675652	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
-7985	8421	7379985965003661	Database.exe	572732a1e7f33f8f
-12	346	7379986429772316	Database_autogen/timestamp	6a9e069343789ee
-12	346	7379986429772316	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-12	346	7379986429772316	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-12	346	7379986429772316	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-369	10158	7379986527830246	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
-10160	10936	7379986535576415	Database.exe	572732a1e7f33f8f
-14	1963	7379987287161468	Database_autogen/timestamp	6a9e069343789ee
-14	1963	7379987287161468	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-14	1963	7379987287161468	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-14	1963	7379987287161468	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-1989	10305	7379987371806038	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
-10307	10782	7379987376597578	Database.exe	572732a1e7f33f8f
-14	1575	7379988122875232	Database_autogen/timestamp	6a9e069343789ee
-14	1575	7379988122875232	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-14	1575	7379988122875232	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-14	1575	7379988122875232	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-1599	9151	7379988199959279	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
-9152	9674	7379988205076046	Database.exe	572732a1e7f33f8f
-13	327	7379988549776679	Database_autogen/timestamp	6a9e069343789ee
-13	327	7379988549776679	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-13	327	7379988549776679	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
-13	327	7379988549776679	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
-351	8463	7379988631270543	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
-8464	8948	7379988635962722	Database.exe	572732a1e7f33f8f
+238	4795	7380114446092552	CMakeFiles/Database.dir/login.cpp.obj	6d7dedfc75c11878
+9	908	7380114507393282	build.ninja	49fc0346391712b3
+23	270	7380114511168191	Database_autogen/timestamp	6a9e069343789ee
+23	270	7380114511168191	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+23	270	7380114511168191	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
+23	270	7380114511168191	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+271	4442	7380114553897168	CMakeFiles/Database.dir/Database_autogen/mocs_compilation.cpp.obj	4114d186af9cf0c2
+275	4937	7380114558874950	CMakeFiles/Database.dir/login.cpp.obj	6d7dedfc75c11878
+280	5895	7380114568455346	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
+5896	6357	7380114572971880	Database.exe	90d53efea02583e1
+169	2808	7380117936702142	Database_autogen/timestamp	6a9e069343789ee
+169	2808	7380117936702142	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+169	2808	7380117936702142	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
+169	2808	7380117936702142	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+2828	9147	7380118000102740	CMakeFiles/Database.dir/main.cpp.obj	63d9b72ba56fc3b8
+2841	9467	7380118003300584	CMakeFiles/Database.dir/login.cpp.obj	6d7dedfc75c11878
+2833	10627	7380118014890657	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
+10627	11139	7380118019960709	Database.exe	90d53efea02583e1
+14	351	7380118767610576	Database_autogen/timestamp	6a9e069343789ee
+14	351	7380118767610576	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+14	351	7380118767610576	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
+14	351	7380118767610576	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+380	7348	7380118837661547	CMakeFiles/Database.dir/main.cpp.obj	63d9b72ba56fc3b8
+389	8818	7380118852374036	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
+28	604	7380119019184078	Database_autogen/timestamp	6a9e069343789ee
+28	604	7380119019184078	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+28	604	7380119019184078	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
+28	604	7380119019184078	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+639	8681	7380119094956142	CMakeFiles/Database.dir/login.cpp.obj	6d7dedfc75c11878
+632	9618	7380119109298740	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
+9619	10264	7380119115665818	Database.exe	90d53efea02583e1
+16	363	7380120055175342	Database_autogen/timestamp	6a9e069343789ee
+16	363	7380120055175342	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+16	363	7380120055175342	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
+16	363	7380120055175342	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+388	8615	7380120137769225	CMakeFiles/Database.dir/login.cpp.obj	6d7dedfc75c11878
+395	8694	7380120138573000	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
+8695	9272	7380120144256849	Database.exe	90d53efea02583e1
+11	353	7380122142954974	Database_autogen/timestamp	6a9e069343789ee
+11	353	7380122142954974	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+11	353	7380122142954974	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
+11	353	7380122142954974	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+372	9574	7380122235207767	CMakeFiles/Database.dir/login.cpp.obj	6d7dedfc75c11878
+376	10709	7380122246554719	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
+10710	11281	7380122252201117	Database.exe	90d53efea02583e1
+14	313	7380123114719965	Database_autogen/timestamp	6a9e069343789ee
+14	313	7380123114719965	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+14	313	7380123114719965	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
+14	313	7380123114719965	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+345	7306	7380123184591016	CMakeFiles/Database.dir/login.cpp.obj	6d7dedfc75c11878
+339	7654	7380123188208695	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
+7654	8637	7380123197988876	Database.exe	90d53efea02583e1
+14	2261	7380124605498273	Database_autogen/timestamp	6a9e069343789ee
+14	2261	7380124605498273	Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+14	2261	7380124605498273	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	6a9e069343789ee
+14	2261	7380124605498273	C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	6a9e069343789ee
+2286	11686	7380124700922668	CMakeFiles/Database.dir/login.cpp.obj	6d7dedfc75c11878
+2274	12404	7380124708294164	CMakeFiles/Database.dir/main.cpp.obj	63d9b72ba56fc3b8
+2264	12517	7380124709422575	CMakeFiles/Database.dir/Database_autogen/mocs_compilation.cpp.obj	4114d186af9cf0c2
+2279	13570	7380124719931526	CMakeFiles/Database.dir/mainwindow.cpp.obj	dea0674166c37756
+13570	14192	7380124726098047	Database.exe	90d53efea02583e1

@@ -30,3 +30,9 @@ void MainWindow::on_horizontalSlider_valueChanged(int value)
     ui -> Rating -> setText(QString::number(value));
 }
 
+
+void MainWindow::on_logout_clicked()
+{
+
+}
+

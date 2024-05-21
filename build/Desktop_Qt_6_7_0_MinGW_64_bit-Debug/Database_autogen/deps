@@ -141,7 +141,9 @@ Database_autogen/timestamp: \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qtransform.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+	C:/Qt/6.7.0/mingw_64/include/QtWidgets/QDialog \
 	C:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
+	C:/Qt/6.7.0/mingw_64/include/QtWidgets/qdialog.h \
 	C:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h \
 	C:/Qt/6.7.0/mingw_64/include/QtWidgets/qsizepolicy.h \
 	C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
@@ -522,8 +524,11 @@ Database_autogen/timestamp: \
 	C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeSystem.cmake \
 	C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/moc_predefs.h \
 	C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/images.qrc \
+	C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/login.cpp \
+	C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/login.h \
 	C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/main.cpp \
 	C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/mainwindow.cpp \
 	C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/mainwindow.h \
+	C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/login.ui \
 	C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/mainwindow.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

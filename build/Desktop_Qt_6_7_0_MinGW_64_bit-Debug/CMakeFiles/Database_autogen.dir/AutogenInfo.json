@@ -256,6 +256,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/hp/OneDrive/Documents/Repo F/qt-test/login.h",
+			"MU",
+			"EWIEGA46WW/moc_login.cpp",
+			null
+		],
+		[
 			"C:/Users/hp/OneDrive/Documents/Repo F/qt-test/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -333,6 +339,7 @@
 	"SETTINGS_FILE" : "C:/Users/hp/OneDrive/Documents/Repo F/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/Database_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "C:/Users/hp/OneDrive/Documents/Repo F/qt-test/login.cpp", "MU", null ],
 		[ "C:/Users/hp/OneDrive/Documents/Repo F/qt-test/main.cpp", "MU", null ],
 		[
 			"C:/Users/hp/OneDrive/Documents/Repo F/qt-test/mainwindow.cpp",
