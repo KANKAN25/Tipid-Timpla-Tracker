@@ -6212,6 +6212,18 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "C:/Program Files (x86)/Database"
+		},
+		{
+			"name" : "nlohmann_json_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for nlohmann_json."
+				}
+			],
+			"type" : "PATH",
+			"value" : "nlohmann_json_DIR-NOTFOUND"
 		}
 	],
 	"kind" : "cache",
