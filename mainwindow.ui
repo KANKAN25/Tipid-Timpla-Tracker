@@ -201,9 +201,9 @@
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>180</y>
+             <y>177</y>
              <width>104</width>
-             <height>71</height>
+             <height>61</height>
             </rect>
            </property>
            <property name="frameShape">
@@ -216,7 +216,7 @@
             <property name="geometry">
              <rect>
               <x>40</x>
-              <y>50</y>
+              <y>46</y>
               <width>16</width>
               <height>16</height>
              </rect>
@@ -239,7 +239,7 @@
             <property name="geometry">
              <rect>
               <x>10</x>
-              <y>30</y>
+              <y>25</y>
               <width>84</width>
               <height>22</height>
              </rect>
@@ -276,7 +276,7 @@
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>261</y>
+             <y>255</y>
              <width>120</width>
              <height>51</height>
             </rect>
@@ -371,22 +371,6 @@
              </property>
             </item>
            </widget>
-           <widget class="QFrame" name="frame_5">
-            <property name="geometry">
-             <rect>
-              <x>90</x>
-              <y>10</y>
-              <width>120</width>
-              <height>51</height>
-             </rect>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-           </widget>
           </widget>
           <widget class="QFrame" name="frame_9">
            <property name="geometry">
@@ -394,7 +378,7 @@
              <x>10</x>
              <y>40</y>
              <width>120</width>
-             <height>41</height>
+             <height>51</height>
             </rect>
            </property>
            <property name="frameShape">
@@ -427,7 +411,7 @@
             <property name="geometry">
              <rect>
               <x>0</x>
-              <y>20</y>
+              <y>24</y>
               <width>41</width>
               <height>19</height>
              </rect>
@@ -445,7 +429,7 @@
             <property name="geometry">
              <rect>
               <x>33</x>
-              <y>20</y>
+              <y>24</y>
               <width>41</width>
               <height>19</height>
              </rect>
@@ -463,7 +447,7 @@
             <property name="geometry">
              <rect>
               <x>74</x>
-              <y>20</y>
+              <y>24</y>
               <width>41</width>
               <height>19</height>
              </rect>
@@ -482,9 +466,9 @@
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>90</y>
+             <y>103</y>
              <width>101</width>
-             <height>81</height>
+             <height>61</height>
             </rect>
            </property>
            <property name="frameShape">
@@ -497,7 +481,7 @@
             <property name="geometry">
              <rect>
               <x>10</x>
-              <y>29</y>
+              <y>20</y>
               <width>81</width>
               <height>18</height>
              </rect>
@@ -515,7 +499,7 @@
             <property name="geometry">
              <rect>
               <x>10</x>
-              <y>53</y>
+              <y>40</y>
               <width>81</width>
               <height>18</height>
              </rect>
@@ -610,16 +594,6 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QGraphicsView" name="graphicsView">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>151</width>
-           <height>71</height>
-          </rect>
-         </property>
-        </widget>
         <widget class="QLabel" name="label">
          <property name="geometry">
           <rect>
@@ -696,6 +670,35 @@
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
+        <widget class="QFrame" name="frame_14">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>151</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>151</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
        </widget>
        <widget class="QFrame" name="frame_10">
         <property name="geometry">
@@ -712,16 +715,6 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QGraphicsView" name="graphicsView_3">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>151</width>
-           <height>71</height>
-          </rect>
-         </property>
-        </widget>
         <widget class="QLabel" name="label_7">
          <property name="geometry">
           <rect>
@@ -797,6 +790,32 @@
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
+        </widget>
+        <widget class="QFrame" name="frame_13">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>151</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QGraphicsView" name="graphicsView_5">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>151</width>
+            <height>71</height>
+           </rect>
+          </property>
+         </widget>
         </widget>
        </widget>
        <widget class="QFrame" name="frame_11">

@@ -522,6 +522,7 @@ Database_autogen/timestamp: \
   CMakeFiles/3.27.7/CMakeRCCompiler.cmake \
   CMakeFiles/3.27.7/CMakeSystem.cmake \
   Database_autogen/moc_predefs.h \
+  C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/images.qrc \
   C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/main.cpp \
   C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/mainwindow.cpp \
   C:/Users/hp/OneDrive/Documents/Repo\ F/qt-test/mainwindow.h \
