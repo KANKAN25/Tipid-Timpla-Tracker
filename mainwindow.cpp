@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QPixmap>
+#include <QDebug>
 #include "login.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -17,6 +18,10 @@ MainWindow::MainWindow(QWidget *parent)
     int w = ui->label_4->width();
     int h = ui->label_4->height();
     ui->label_4->setPixmap(pix.scaled(w, h, Qt::KeepAspectRatioByExpanding)); // Fill the whole space with the picture
+
+    // Setup connections for navigating pages
+    connect(ui->next_1, &QPushButton::clicked, this, &MainWindow::page2Widget);
+    connect(ui->next_2, &QPushButton::clicked, this, &MainWindow::page1Widget);
 }
 
 MainWindow::~MainWindow()
@@ -32,6 +37,17 @@ void MainWindow::on_horizontalSlider_valueChanged(int value)
 
 void MainWindow::on_logout_clicked()
 {
+    ui->stackedWidget->setCurrentWidget(ui->page_1); // Ensure Page 1 is shown when logging out, so when logging back in it will show page 1
     emit loggedOut(); // Emit the loggedOut signal
     this->hide(); // Hide the Main window
+}
+
+void MainWindow::page1Widget()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_1);
+}
+
+void MainWindow::page2Widget()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_2);
 }

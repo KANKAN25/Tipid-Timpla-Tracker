@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtGui>
+#include <QStackedWidget>
 
 namespace Ui {
 class MainWindow;
@@ -21,6 +23,9 @@ signals:
 private slots:
     void on_horizontalSlider_valueChanged(int value);
     void on_logout_clicked();
+    void page1Widget();
+    void page2Widget();
+
 
 private:
     Ui::MainWindow *ui;
