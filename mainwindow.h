@@ -2,9 +2,7 @@
 #define MAINWINDOW_H
 #include "json.hpp"
 
-
 using json = nlohmann::json;
-
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -22,7 +20,10 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_verticalScrollBar_valueChanged(int value);
+
+    void on_horizontalSlider_valueChanged(int value);
+
+    void on_logout_clicked();
 //    void on_loadJsonButton_clicked();
 
 private:

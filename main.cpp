@@ -1,6 +1,6 @@
-#include "mainwindow.h"
-
 #include <QApplication>
+#include "login.h"
+#include "mainwindow.h"
 #include "json.hpp"
 #include <fstream>
 #include <iostream>
@@ -12,9 +12,14 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-    ifstream file("people.json");
+
+    // Create and show the login dialog
+    Login loginDialog;
+    if (loginDialog.exec() == QDialog::Accepted) {
+        // If login is successful, create and show the main window
+        MainWindow mainWindow;
+        mainWindow.show();
+        ifstream file("people.json");
     json j;
     file >> j;
     file.close();
@@ -40,4 +45,8 @@ int main(int argc, char *argv[])
     fileOut.close();
 
     return a.exec();
+    } else {
+        // If login is not successful, exit the application
+        return 0;
+    }
 }
