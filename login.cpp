@@ -7,7 +7,7 @@ Login::Login(QWidget *parent) :
     ui(new Ui::Login)
 {
     ui->setupUi(this);
-    this->setFixedSize(374,272); //window fixed size
+    this->setFixedSize(374,272); // Login window's fixed size
     mainwindow = nullptr;
 }
 
