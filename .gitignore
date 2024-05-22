@@ -10,6 +10,9 @@
 *.dll
 *.dylib
 
+# Folders to ignore
+/build
+
 # Qt-es
 object_script.*.Release
 object_script.*.Debug
