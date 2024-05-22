@@ -1,9 +1,0 @@
-# ninja log v5
-1	606	7379074559832946	Database_autogen/timestamp	28d3ca496da4410
-1	606	7379074559832946	Database_autogen/mocs_compilation.cpp	28d3ca496da4410
-1	606	7379074559832946	C:/Users/Asus/OneDrive/Desktop/Coding Things Formal/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/timestamp	28d3ca496da4410
-1	606	7379074559832946	C:/Users/Asus/OneDrive/Desktop/Coding Things Formal/qt-test/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Database_autogen/mocs_compilation.cpp	28d3ca496da4410
-609	2346	7379074577784909	CMakeFiles/Database.dir/main.cpp.obj	4433397a926614cd
-607	2366	7379074577994620	CMakeFiles/Database.dir/Database_autogen/mocs_compilation.cpp.obj	666271c530e7b65c
-611	2544	7379074579769599	CMakeFiles/Database.dir/mainwindow.cpp.obj	5a3360bf73dea472
-2545	2728	7379074581585056	Database.exe	8028f8a6d6cf3f87
