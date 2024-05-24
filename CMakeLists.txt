@@ -24,6 +24,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         images.qrc
         login.h login.cpp login.ui
+        eatery.h eatery.cpp eatery.ui
+        createaccount.h createaccount.cpp createaccount.ui
+        addeatery.h addeatery.cpp addeatery.ui
         JSON_Tools.cpp
     )
 # Define target properties for Android with Qt 6 as:

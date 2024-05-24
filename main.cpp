@@ -15,44 +15,22 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    // Create and show the login dialog
     Login loginDialog;
-    if (loginDialog.exec() == QDialog::Accepted) {
-        // If login is successful, create and show the main window
-        MainWindow mainWindow;
+    MainWindow mainWindow;
+
+    // Connect the login dialog's accepted signal to the main window's show slot
+    QObject::connect(&loginDialog, &Login::accepted, [&mainWindow, &loginDialog]() {
+        loginDialog.hide();
         mainWindow.show();
-        ofstream fileOut1("people.json");
-        fileOut1 << "[]";
-        fileOut1.close();
+    });
 
-        ifstream file("people.json");
-        json j;
-        file >> j;
-        file.close();
+    // Connect the main window's loggedOut signal to the login dialog's show slot
+    QObject::connect(&mainWindow, &MainWindow::loggedOut, [&mainWindow, &loginDialog]() {
+        mainWindow.hide();
+        loginDialog.show();
+    });
 
-        // Create a new person object
-        json newPerson;
-        newPerson["name"] = "Alice Brown";
-        newPerson["age"] = 28;
-        newPerson["occupation"] = "Teacher";
-        json address;
-        address["street"] = "901 Maple St";
-        address["city"] = "Newtown";
-        address["state"] = "FL";
-        address["zip"] = "12345";
-        newPerson["address"] = address;
-
-        // Append the new person object to the existing JSON array
-        j.push_back(newPerson);
-        ofstream fileOut("people.json");
-        // Write the updated JSON data to the file
-
-        fileOut << j.dump(4); // 4 is the indentation level
-        fileOut.close();
+    loginDialog.show();  // Show the login dialog initially
 
     return a.exec();
-    } else {
-        // If login is not successful, exit the application
-        return 0;
-    }
 }

@@ -19,6 +19,8 @@ public:
 private slots:
     void on_pushButton_Login_clicked();
 
+    void on_CreateButton_clicked();
+
 private:
     Ui::Login *ui;
     MainWindow *mainwindow;
