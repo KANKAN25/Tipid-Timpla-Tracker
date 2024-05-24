@@ -75,7 +75,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_New">
+     <widget class="QPushButton" name="CreateButton">
       <property name="text">
        <string>Create New Account</string>
       </property>

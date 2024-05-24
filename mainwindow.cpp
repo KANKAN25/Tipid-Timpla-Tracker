@@ -3,6 +3,7 @@
 #include <QPixmap>
 #include <QDebug>
 #include "login.h"
+#include "eatery.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -50,4 +51,12 @@ void MainWindow::page1Widget()
 void MainWindow::page2Widget()
 {
     ui->stackedWidget->setCurrentWidget(ui->page_2);
+}
+
+void MainWindow::on_Place1_clicked()
+{
+    Eatery *eatery = new Eatery(this); // Declaration
+    eatery->show(); // Show the Eatery window
+
+    this->hide(); // Hide the Main window
 }

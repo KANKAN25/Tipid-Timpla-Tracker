@@ -25,7 +25,7 @@ private slots:
     void on_logout_clicked();
     void page1Widget();
     void page2Widget();
-
+    void on_Place1_clicked();
 
 private:
     Ui::MainWindow *ui;

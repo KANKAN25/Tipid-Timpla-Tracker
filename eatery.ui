@@ -394,13 +394,26 @@
         </rect>
        </property>
       </widget>
+      <widget class="QPushButton" name="back">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>370</y>
+         <width>21</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QFrame" name="frame_3">
       <property name="geometry">
        <rect>
         <x>230</x>
         <y>40</y>
-        <width>151</width>
+        <width>501</width>
         <height>391</height>
        </rect>
       </property>
@@ -426,69 +439,25 @@
         <enum>QFrame::Raised</enum>
        </property>
       </widget>
-     </widget>
-     <widget class="QFrame" name="frame_5">
-      <property name="geometry">
-       <rect>
-        <x>404</x>
-        <y>40</y>
-        <width>151</width>
-        <height>391</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QFrame" name="frame_7">
+      <widget class="QTableWidget" name="tableWidget">
        <property name="geometry">
         <rect>
-         <x>200</x>
-         <y>390</y>
-         <width>201</width>
-         <height>391</height>
+         <x>6</x>
+         <y>5</y>
+         <width>491</width>
+         <height>381</height>
         </rect>
        </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QFrame" name="frame_8">
-      <property name="geometry">
-       <rect>
-        <x>580</x>
-        <y>40</y>
-        <width>151</width>
-        <height>391</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QFrame" name="frame_9">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>390</y>
-         <width>201</width>
-         <height>391</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
+       <column>
+        <property name="text">
+         <string>Main Dish</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Beverage</string>
+        </property>
+       </column>
       </widget>
      </widget>
     </widget>
