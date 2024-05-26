@@ -4,6 +4,7 @@
 #include <QDebug>
 #include "login.h"
 #include "eatery.h"
+#include "addeatery.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -60,3 +61,10 @@ void MainWindow::on_Place1_clicked()
 
     this->hide(); // Hide the Main window
 }
+
+void MainWindow::on_pushButton_Eatery_clicked()
+{
+    AddEatery *addEatery = new AddEatery(this); // Declaration
+    addEatery->show(); // Show the Eatery window
+}
+

@@ -26,6 +26,7 @@ private slots:
     void page1Widget();
     void page2Widget();
     void on_Place1_clicked();
+    void on_pushButton_Eatery_clicked();
 
 private:
     Ui::MainWindow *ui;
