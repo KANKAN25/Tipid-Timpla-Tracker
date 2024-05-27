@@ -30,7 +30,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         reviews.h reviews.cpp reviews.ui
         editeatery.h editeatery.cpp editeatery.ui
         addreview.h addreview.cpp addreview.ui
-        JSON_Tools.cpp
+
+        JSONUserHandler.h
+        JSONUserHandler.cpp
+        JSONFileInitializer.h
+        JSONFileInitializer.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Database APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

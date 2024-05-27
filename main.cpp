@@ -2,6 +2,8 @@
 #include "login.h"
 #include "mainwindow.h"
 #include "json.hpp"
+#include "JSONFileInitializer.h"
+#include "JSONUserHandler.h"
 #include <fstream>
 #include <iostream>
 #include <qstring.h>
@@ -13,10 +15,23 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+
     QApplication a(argc, argv);
 
     Login loginDialog;
     MainWindow mainWindow;
+
+    // Initializers
+    JSONFileInitializer inituserlist("UserInfo.json");
+    if (!inituserlist.initialize()) {
+        return EXIT_FAILURE;
+    }
+
+    JSONFileInitializer initcarrienderialist("CarrinderiaList.json");
+    if (!initcarrienderialist.initialize()) {
+        return EXIT_FAILURE;
+    }
+
 
     // Connect the login dialog's accepted signal to the main window's show slot
     QObject::connect(&loginDialog, &Login::accepted, [&mainWindow, &loginDialog]() {
