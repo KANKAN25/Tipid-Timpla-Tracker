@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AddEatery</class>
- <widget class="QDialog" name="AddEatery">
+ <class>EditEatery</class>
+ <widget class="QDialog" name="EditEatery">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -39,17 +39,17 @@
        </font>
       </property>
       <property name="text">
-       <string>ADD EATERY</string>
+       <string>Edit Eatery</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QFrame" name="frame_2">
+     <widget class="QFrame" name="frame_3">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>40</y>
+        <y>30</y>
         <width>201</width>
         <height>201</height>
        </rect>
@@ -163,13 +163,20 @@
          </item>
         </layout>
        </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="text">
+          <string>Submit Eatery</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
-     <widget class="QFrame" name="frame_3">
+     <widget class="QFrame" name="frame_4">
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>40</y>
+        <y>30</y>
         <width>191</width>
         <height>201</height>
        </rect>
@@ -184,7 +191,7 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
+         <y>10</y>
          <width>121</width>
          <height>22</height>
         </rect>
@@ -204,7 +211,7 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>82</y>
+         <y>92</y>
          <width>121</width>
          <height>22</height>
         </rect>
@@ -224,7 +231,7 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>20</y>
+         <y>30</y>
          <width>189</width>
          <height>22</height>
         </rect>
@@ -234,30 +241,17 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>102</y>
+         <y>112</y>
          <width>81</width>
          <height>22</height>
         </rect>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_5">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>140</y>
-         <width>191</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Submit Eatery</string>
        </property>
       </widget>
       <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>90</x>
-         <y>100</y>
+         <y>110</y>
          <width>101</width>
          <height>26</height>
         </rect>
@@ -283,7 +277,7 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>40</y>
+         <y>50</y>
          <width>121</width>
          <height>22</height>
         </rect>
@@ -303,10 +297,23 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>60</y>
+         <y>70</y>
          <width>189</width>
          <height>22</height>
         </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>140</y>
+         <width>191</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add New Menu</string>
        </property>
       </widget>
      </widget>

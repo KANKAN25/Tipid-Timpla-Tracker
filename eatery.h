@@ -21,6 +21,8 @@ public:
 private slots:
     void on_back_clicked();
 
+    void on_pushButton_Reviews_clicked();
+
 private:
     Ui::Eatery *ui;
     MainWindow *mainWindow; // Pointer to MainWindow
