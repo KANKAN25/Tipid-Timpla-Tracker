@@ -2,9 +2,11 @@
 
 JSONUserHandler::JSONUserHandler(const std::string& filename)  : filename(filename), founduser(false), foundpass(false) {}
 
-bool JSONUserHandler::load() {
+bool JSONUserHandler::load()
+{
     std::ifstream file(filename);
-    if (!file.is_open()) {
+    if (!file.is_open())
+    {
         std::cerr << "Unable to open file " << filename << std::endl;
         return false;
     }
@@ -13,9 +15,11 @@ bool JSONUserHandler::load() {
     return true;
 }
 
-bool JSONUserHandler::save() {
+bool JSONUserHandler::save()
+{
     std::ofstream outfile(filename);
-    if (!outfile.is_open()) {
+    if (!outfile.is_open())
+    {
         std::cerr << "Unable to open file " << filename << std::endl;
         return false;
     }
@@ -24,10 +28,13 @@ bool JSONUserHandler::save() {
     return true;
 }
 
-bool JSONUserHandler::deleteUser(const std::string& username) {
+bool JSONUserHandler::deleteUser(const std::string& username)
+{
     bool found = false;
-    for (auto it = jsonData.begin(); it != jsonData.end(); ++it) {
-        if ((*it)["Username"] == username) {
+    for (auto it = jsonData.begin(); it != jsonData.end(); ++it)
+    {
+        if ((*it)["Username"] == username)
+        {
             jsonData.erase(it);
             found = true;
             break;
@@ -39,7 +46,8 @@ bool JSONUserHandler::deleteUser(const std::string& username) {
     return found;
 }
 
-bool JSONUserHandler::addUser(const std::string& username, const std::string& password) {
+bool JSONUserHandler::addUser(const std::string& username, const std::string& password)
+{
     ordered_json newUser;
     newUser["Username"] = username;
     newUser["Password"] = password;
@@ -47,14 +55,18 @@ bool JSONUserHandler::addUser(const std::string& username, const std::string& pa
     return true;
 }
 
-bool JSONUserHandler::findUser(const std::string& username, const std::string& password) {
+bool JSONUserHandler::findUser(const std::string& username, const std::string& password)
+{
     founduser = false;
     foundpass = false;
 
-    for (auto& it : jsonData) {
-        if (it["Username"] == username) {
+    for (auto& it : jsonData)
+    {
+        if (it["Username"] == username)
+        {
             founduser = true;
-            if (it["Password"] == password) {
+            if (it["Password"] == password)
+            {
                 foundpass = true;
                 curusername = username;
                 curpassword = password;

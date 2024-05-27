@@ -2,15 +2,19 @@
 
 JSONFileInitializer::JSONFileInitializer(const std::string& filename) : filename(filename) {}
 
-bool JSONFileInitializer::initialize() {
+bool JSONFileInitializer::initialize()
+{
     std::ifstream file(filename);
-    if (!file.is_open()) {
-        if (!createFile()) {
+    if (!file.is_open())
+    {
+        if (!createFile())
+        {
             std::cerr << "Failed to create file " << filename << std::endl;
             return false;
         }
         file.open(filename);
-        if (!file.is_open()) {
+        if (!file.is_open())
+        {
             std::cerr << "Failed to open file " << filename << " after creation" << std::endl;
             return false;
         }
@@ -20,9 +24,11 @@ bool JSONFileInitializer::initialize() {
     return true;
 }
 
-bool JSONFileInitializer::createFile() {
+bool JSONFileInitializer::createFile()
+{
     std::ofstream newfile(filename);
-    if (!newfile.is_open()) {
+    if (!newfile.is_open())
+    {
         std::cerr << "Unable to create file " << filename << std::endl;
         return false;
     }

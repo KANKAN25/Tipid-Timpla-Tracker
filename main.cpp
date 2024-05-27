@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     Login loginDialog;
     MainWindow mainWindow;
 
-    // Initializers
+    // Initializers for both files to be used if absent
     JSONFileInitializer inituserlist("UserInfo.json");
     if (!inituserlist.initialize()) {
         return EXIT_FAILURE;

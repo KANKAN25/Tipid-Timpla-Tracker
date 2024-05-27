@@ -8,7 +8,7 @@
 
 using ordered_json = nlohmann::ordered_json;
 
-class JSONUserHandler {
+class JSONUserHandler{
 public:
     JSONUserHandler(const std::string& filename);
     bool load();
