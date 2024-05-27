@@ -1,6 +1,7 @@
 #include "eatery.h"
 #include "ui_eatery.h"
 #include "mainwindow.h"
+#include "reviews.h"
 
 // Correct the constructor definition to match the declaration
 Eatery::Eatery(MainWindow *mainWindow, QWidget *parent)
@@ -22,3 +23,10 @@ void Eatery::on_back_clicked()
     mainWindow->show(); // Show the main window
     this->close(); // Close the eatery window
 }
+
+void Eatery::on_pushButton_Reviews_clicked()
+{
+    Reviews *reviews = new Reviews(this); // Declaration
+    reviews->show(); // Show the Eatery window
+}
+

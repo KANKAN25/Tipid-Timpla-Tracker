@@ -1326,7 +1326,7 @@
           </widget>
          </widget>
         </widget>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="pushButton_Eatery">
          <property name="geometry">
           <rect>
            <x>178</x>

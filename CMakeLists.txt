@@ -27,6 +27,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         eatery.h eatery.cpp eatery.ui
         createaccount.h createaccount.cpp createaccount.ui
         addeatery.h addeatery.cpp addeatery.ui
+        reviews.h reviews.cpp reviews.ui
+        editeatery.h editeatery.cpp editeatery.ui
+        addreview.h addreview.cpp addreview.ui
         JSON_Tools.cpp
     )
 # Define target properties for Android with Qt 6 as:
