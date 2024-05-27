@@ -9,12 +9,12 @@ Reviews::Reviews(QWidget *parent)
     ui->setupUi(this);
     this->setFixedSize(347, 459); // Main window's fixed size
 
-    // Assuming ui->stackedWidget is already defined in your UI file
     QWidget *page = new QWidget();
     QWidget *page2 = new QWidget();
 
-    ui->stackedWidget->addWidget(page); // Index 0
-    ui->stackedWidget->addWidget(page2); // Index 1
+    // Index
+    ui->stackedWidget->addWidget(page);
+    ui->stackedWidget->addWidget(page2);
 
     // Setup connections for navigating pages
     connect(ui->next, &QPushButton::clicked, this, &Reviews::showPage2);
@@ -41,6 +41,6 @@ void Reviews::showPage2()
 void Reviews::on_pushButton_AddReview_clicked()
 {
     AddReview *addreview = new AddReview(this); // Declaration
-    addreview->show(); // Show the Eatery window
+    addreview->show(); // Show the Add Review window
 }
 
