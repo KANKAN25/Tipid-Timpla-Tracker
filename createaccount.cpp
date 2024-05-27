@@ -7,7 +7,7 @@ CreateAccount::CreateAccount(QWidget *parent)
     , ui(new Ui::CreateAccount)
 {
     ui->setupUi(this);
-    this->setFixedSize(374,272); // Login window's fixed size
+    this->setFixedSize(374,272); // Window's fixed size
     login = new Login(this); // Instantiate the Login window
 }
 
