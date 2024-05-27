@@ -27,6 +27,6 @@ void Eatery::on_back_clicked()
 void Eatery::on_pushButton_Reviews_clicked()
 {
     Reviews *reviews = new Reviews(this); // Declaration
-    reviews->show(); // Show the Eatery window
+    reviews->show(); // Show the Reviews' window
 }
 

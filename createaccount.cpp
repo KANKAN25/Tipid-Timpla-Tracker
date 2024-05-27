@@ -19,6 +19,6 @@ CreateAccount::~CreateAccount()
 void CreateAccount::on_pushButton_New_clicked()
 {
     login->show(); // Show the main window
-    this->close(); // Close the eatery window
+    this->close(); // Close the login window
 }
 

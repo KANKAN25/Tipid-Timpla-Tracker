@@ -6,6 +6,7 @@ EditEatery::EditEatery(QWidget *parent)
     , ui(new Ui::EditEatery)
 {
     ui->setupUi(this);
+    this->setFixedSize(438, 261); // Edit Eatery's fixed size
 }
 
 EditEatery::~EditEatery()
