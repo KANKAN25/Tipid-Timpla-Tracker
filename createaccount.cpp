@@ -36,6 +36,11 @@ void CreateAccount::on_pushButton_Login_okay_clicked()
     std::string username = ui->lineEdit_Username->text().toStdString();
     std::string password = ui->lineEdit_Password->text().toStdString();
 
+    if (account.findUsername(username)) {
+        QMessageBox::information(this, "Create New Account", "Username exists.");
+        return;
+    }
+
     if (!account.addUser(username, password)) {
         QMessageBox::warning(this, "Error", "Failed to add user.");
         return;

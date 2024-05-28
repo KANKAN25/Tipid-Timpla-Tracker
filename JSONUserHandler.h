@@ -15,6 +15,7 @@ public:
     bool save();
     bool deleteUser(const std::string& username);
     bool addUser(const std::string& username, const std::string& password);
+    bool findUsername(const std::string& username);
     bool findUser(const std::string& username, const std::string& password);
 
     std::string getCurrentUsername() const;

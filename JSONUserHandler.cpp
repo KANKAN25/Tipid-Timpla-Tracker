@@ -55,6 +55,22 @@ bool JSONUserHandler::addUser(const std::string& username, const std::string& pa
     return true;
 }
 
+bool JSONUserHandler::findUsername(const std::string& username)
+{
+    founduser = false;
+
+    for (auto& it : jsonData)
+    {
+        if (it["Username"] == username)
+        {
+            founduser = true;
+            break;
+        }
+    }
+
+    return founduser;
+}
+
 bool JSONUserHandler::findUser(const std::string& username, const std::string& password)
 {
     founduser = false;
