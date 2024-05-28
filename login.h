@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "mainwindow.h"
+#include "JSONUserHandler.h"
 
 namespace Ui {
 class Login;

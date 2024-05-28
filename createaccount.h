@@ -2,6 +2,7 @@
 #define CREATEACCOUNT_H
 
 #include <QDialog>
+#include "JSONUserHandler.h"
 
 class Login;
 
@@ -19,6 +20,8 @@ public:
 
 private slots:
     void on_pushButton_New_clicked();
+
+    void on_pushButton_Login_okay_clicked();
 
 private:
     Ui::CreateAccount *ui;

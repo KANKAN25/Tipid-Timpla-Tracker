@@ -19,18 +19,32 @@ Login::~Login()
 
 void Login::on_pushButton_Login_clicked()
 {
+    JSONUserHandler account("UserInfo.json");
 
-    QString username = ui->lineEdit_Username->text();
-    QString password = ui->lineEdit_Password->text();
-
-    if (username == "user" && password == "password") {
-        // If login is successful, accept dialog
-        ui->lineEdit_Username->clear(); // Clear the username field
-        ui->lineEdit_Password->clear(); // Clear the password field
-        accept();
-    } else {
-        QMessageBox::warning(this, "Login Failed", "Invalid username or password");
+    if (!account.load()) {
+        QMessageBox::warning(this, "Error", "Unable to load user data.");
+        return;
     }
+
+    std::string username = ui->lineEdit_Username->text().toStdString();
+    std::string password = ui->lineEdit_Password->text().toStdString();
+
+    if (!account.findUser(username, password)) {
+        QMessageBox::warning(this, "Login Failed", "Invalid username or password");
+        return;
+    }
+
+    accept();
+
+
+    //if (username == "user" && password == "password") {
+        // If login is successful, accept dialog
+      //  ui->lineEdit_Username->clear(); // Clear the username field
+      //  ui->lineEdit_Password->clear(); // Clear the password field
+      //  accept();
+    //} else {
+      //  QMessageBox::warning(this, "Login Failed", "Invalid username or password");
+    //}
 }
 
 void Login::on_CreateButton_clicked()
