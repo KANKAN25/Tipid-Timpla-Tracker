@@ -6,7 +6,7 @@
 #include <string>
 
 // Work in progress header file for carrienderia review handling
-// Treat header files as the same as the prototype functions done in C
+// Treat header files as the same as the prototype functions done in C for better understanding
 
 using ordered_json = nlohmann::ordered_json;
 
