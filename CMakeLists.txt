@@ -35,6 +35,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         JSONUserHandler.cpp
         JSONFileInitializer.h
         JSONFileInitializer.cpp
+        JSONCarrienderiaMenuHandler.h
+        JSONCarrienderiaMenuHandler.cpp
+        JSONCarrienderiaReviewHandler.cpp
+        JSONCarrienderiaReviewHandler.h
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Database APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

@@ -32,7 +32,7 @@ bool JSONFileInitializer::createFile()
         std::cerr << "Unable to create file " << filename << std::endl;
         return false;
     }
-    ordered_json jsonfile = ordered_json::array();
+    ordered_json jsonfile = ordered_json::array(); // creates an empty json array
     newfile << jsonfile.dump(4);
     newfile.close();
     return true;
