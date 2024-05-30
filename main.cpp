@@ -2,6 +2,7 @@
 #include "login.h"
 #include "mainwindow.h"
 #include "json.hpp"
+#include "createaccount.h"
 #include "JSONFileInitializer.h"
 #include "JSONUserHandler.h"
 #include <fstream>
@@ -32,12 +33,7 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-
-    // Connect the login dialog's accepted signal to the main window's show slot
-    QObject::connect(&loginDialog, &Login::accepted, [&mainWindow, &loginDialog]() {
-        loginDialog.hide();
-        mainWindow.show();
-    });
+    loginDialog.show();  // Show the login dialog initially
 
     // Connect the main window's loggedOut signal to the login dialog's show slot
     QObject::connect(&mainWindow, &MainWindow::loggedOut, [&mainWindow, &loginDialog]() {
@@ -45,7 +41,14 @@ int main(int argc, char *argv[])
         loginDialog.show();
     });
 
-    loginDialog.show();  // Show the login dialog initially
+    // Connect the login dialog's accepted signal to the main window's show slot
+    QObject::connect(&loginDialog, &Login::accepted, [&mainWindow, &loginDialog]() {
+        loginDialog.hide();
+        mainWindow.show();
+    });
+
+
+
 
     return a.exec();
 }

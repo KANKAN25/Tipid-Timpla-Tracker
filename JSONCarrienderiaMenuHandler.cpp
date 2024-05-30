@@ -2,6 +2,9 @@
 #include <fstream>
 #include <iostream>
 
+// Not yet complete as it simply deals with the addition of objects of the menu, not the details yet.
+//
+
 JSONCarrienderiaMenuHandler::JSONCarrienderiaMenuHandler()
 {
     initializeBuffers();
@@ -14,6 +17,16 @@ void JSONCarrienderiaMenuHandler::initializeBuffers()
     counters["Meals"] = 0;
     counters["Drinks"] = 0;
 }
+
+// recieves the details from an external source for an object, therefore should be in the same line as addItem function
+// void JSONCarrienderiaMenuHandler::recieveItem(ordered_json& item, const std::string& category, const std::string& category, const int& price)
+/*
+
+
+
+
+
+ */
 
 void JSONCarrienderiaMenuHandler::addItem(const std::string& category, const ordered_json& item)
 {
