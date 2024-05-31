@@ -6,6 +6,9 @@ using json = nlohmann::json;
 #include <QMainWindow>
 #include <QtGui>
 #include <QStackedWidget>
+#include "login.h"
+#include "eatery.h"
+#include "addeatery.h"
 
 namespace Ui {
 class MainWindow;

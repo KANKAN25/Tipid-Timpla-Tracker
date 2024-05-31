@@ -60,14 +60,17 @@
          <item>
           <widget class="QLabel" name="label">
            <property name="text">
-            <string>UserName</string>
+            <string>Username</string>
            </property>
           </widget>
          </item>
          <item>
-          <spacer name="horizontalSpacer_2">
+          <spacer name="horizontalSpacer">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
@@ -92,13 +95,16 @@
           </widget>
          </item>
          <item>
-          <spacer name="horizontalSpacer">
+          <spacer name="horizontalSpacer_2">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>7</width>
+             <width>10</width>
              <height>20</height>
             </size>
            </property>
@@ -123,14 +129,14 @@
         </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_Login_okay">
+        <widget class="QPushButton" name="pushButton_Confirm">
          <property name="text">
-          <string>Okay</string>
+          <string>Confirm</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="CreateButton">
+        <widget class="QPushButton" name="CancelButton">
          <property name="text">
           <string>Cancel</string>
          </property>
