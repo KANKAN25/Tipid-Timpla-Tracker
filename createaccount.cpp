@@ -1,6 +1,5 @@
 #include "createaccount.h"
 #include "ui_createaccount.h"
-#include "login.h"
 #include <QMessageBox>
 
 CreateAccount::CreateAccount(QWidget *parent)
@@ -17,14 +16,8 @@ CreateAccount::~CreateAccount()
     delete ui;
 }
 
-void CreateAccount::on_pushButton_New_clicked()
-{
-    login->show(); // Show the main window
-    this->close(); // Close the login window
-}
 
-
-void CreateAccount::on_pushButton_Login_okay_clicked()
+void CreateAccount::on_pushButton_Confirm_clicked()
 {
     JSONUserHandler account("UserInfo.json");
 
@@ -35,6 +28,11 @@ void CreateAccount::on_pushButton_Login_okay_clicked()
 
     std::string username = ui->lineEdit_Username->text().toStdString();
     std::string password = ui->lineEdit_Password->text().toStdString();
+
+    if (username == "" && password == ""){
+        QMessageBox::information(this, "Create New Account", "Please input valid username and password.");
+        return;
+    }
 
     if (account.findUsername(username)) {
         QMessageBox::information(this, "Create New Account", "Username exists.");
@@ -51,7 +49,13 @@ void CreateAccount::on_pushButton_Login_okay_clicked()
         return;
     }
 
-    this->hide();
-    login->show();
+    emit accountCreated();
+
 }
+
+
+void CreateAccount::on_CancelButton_clicked()
+{
+    emit cancelAccount();
+};
 

@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "mainwindow.h"
 #include "JSONUserHandler.h"
+#include "createaccount.h"
 
 namespace Ui {
 class Login;
@@ -17,6 +18,11 @@ public:
     explicit Login(QWidget *parent = nullptr);
     ~Login();
 
+signals:
+    void loginRequest();
+
+    void createAccount();
+
 private slots:
     void on_pushButton_Login_clicked();
 
@@ -24,7 +30,7 @@ private slots:
 
 private:
     Ui::Login *ui;
-    MainWindow *mainwindow;
+    //MainWindow *mainwindow;
 };
 
 #endif // LOGIN_H

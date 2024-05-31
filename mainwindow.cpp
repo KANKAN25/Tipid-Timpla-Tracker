@@ -2,9 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QPixmap>
 #include <QDebug>
-#include "login.h"
-#include "eatery.h"
-#include "addeatery.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -41,7 +39,6 @@ void MainWindow::on_logout_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->page_1); // Ensure Page 1 is shown when logging out, so when logging back in it will show page 1
     emit loggedOut(); // Emit the loggedOut signal
-    this->hide(); // Hide the Main window
 }
 
 void MainWindow::page1Widget()

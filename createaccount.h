@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "JSONUserHandler.h"
+#include "login.h"
 
 class Login;
 
@@ -18,10 +19,15 @@ public:
     explicit CreateAccount(QWidget *parent = nullptr);
     ~CreateAccount();
 
-private slots:
-    void on_pushButton_New_clicked();
+signals:
+    void accountCreated();
 
-    void on_pushButton_Login_okay_clicked();
+    void cancelAccount();
+
+private slots:
+    void on_pushButton_Confirm_clicked();
+
+    void on_CancelButton_clicked();
 
 private:
     Ui::CreateAccount *ui;

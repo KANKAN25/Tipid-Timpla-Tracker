@@ -8,6 +8,7 @@
 #include <iostream>
 #include <qstring.h>
 #include <QDir>
+#include "createaccount.h"
 
 
 using json = nlohmann::json;
@@ -20,6 +21,7 @@ int main(int argc, char *argv[])
 
     Login loginDialog;
     MainWindow mainWindow;
+    CreateAccount createnewaccount;
 
     // Initializers for both files to be used if absent
     JSONFileInitializer inituserlist("UserInfo.json");
@@ -33,15 +35,33 @@ int main(int argc, char *argv[])
     }
 
 
-    // Connect the login dialog's accepted signal to the main window's show slot
-    QObject::connect(&loginDialog, &Login::accepted, [&mainWindow, &loginDialog]() {
+    // Connect the login dialog's login request signal to the main window's show slot
+    QObject::connect(&loginDialog, &Login::loginRequest, [&]() {
         loginDialog.hide();
         mainWindow.show();
     });
 
+    // Connect the login dialog's create account signal to the main window's show slot
+    QObject::connect(&loginDialog, &Login::createAccount, [&]() {
+        loginDialog.hide();
+        createnewaccount.show();
+    });
+
     // Connect the main window's loggedOut signal to the login dialog's show slot
-    QObject::connect(&mainWindow, &MainWindow::loggedOut, [&mainWindow, &loginDialog]() {
+    QObject::connect(&mainWindow, &MainWindow::loggedOut, [&]() {
         mainWindow.hide();
+        loginDialog.show();
+    });
+
+    // Connect the create account's account created signal to the login dialog's show slot
+    QObject::connect(&createnewaccount, &CreateAccount::accountCreated, [&]() {
+        createnewaccount.hide();
+        loginDialog.show();
+    });
+
+    // Connect the create account's cancel account signal to the login dialog's show slot
+    QObject::connect(&createnewaccount, &CreateAccount::cancelAccount, [&]() {
+        createnewaccount.hide();
         loginDialog.show();
     });
 
