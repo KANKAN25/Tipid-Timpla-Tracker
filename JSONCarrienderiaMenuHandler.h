@@ -15,8 +15,8 @@ public:
 
     // Add, edit, delete items in the specified category
     void addItem(const std::string category, const std::string name, const std::string details, int price);
-    void editItem(const std::string category, const std::string name, const std::string details, int price, size_t index);
-    void deleteItem(const std::string& category, size_t index);
+    bool editItem(const std::string category, const std::string name, const std::string details, int price, size_t index);
+    bool deleteItem(const std::string& category, size_t index);
 
     // Save the current state to a file
     void save(const std::string& filename);

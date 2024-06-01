@@ -76,37 +76,39 @@ void JSONCarrienderiaMenuHandler::addItem(const std::string category, const std:
 // If it is, it will replace the item at the specified index with the new item.
 // Index is a specific parameter that comes from button presses that equate to a number.
 // Again, like the addItem function, this happens after the receiveItem function.
-void JSONCarrienderiaMenuHandler::editItem(const std::string category, const std::string name, const std::string details, int price, size_t index)
+bool JSONCarrienderiaMenuHandler::editItem(const std::string category, const std::string name, const std::string details, int price, size_t index)
 {
     receiveItem(category, name, details, price);
 
     if(counters[category] == 0)
     {
         // please add code here such that the ui is able to detect that there is no items to edit.
-        return;
+        return false;
     }
 
     if (buffers.find(category) != buffers.end() && index < buffers[category].size())
     {
         buffers[category][index] = itemReceiver;
         itemReceiver.clear(); // The clear serves to ensure that the next addition/edit, it is clean
+        return true;
     }
 }
 
 // This index comes from an external source, namely from the user through pressing buttons that equate to numbers.
-void JSONCarrienderiaMenuHandler::deleteItem(const std::string& category, size_t index)
+bool JSONCarrienderiaMenuHandler::deleteItem(const std::string& category, size_t index)
 {
 
     if(counters[category] == 0)
     {
         // please add code here such that the ui is able to detect that there is no items to delete and does nothing
-        return;
+        return false;
     }
 
     if (buffers.find(category) != buffers.end() && index < buffers[category].size())
     {
         buffers[category].erase(buffers[category].begin() + index);
         counters[category]--;
+        return true;
     }
 }
 
