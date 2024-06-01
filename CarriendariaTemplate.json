@@ -1,0 +1,52 @@
+[
+    {
+        "Name": "Jon's Eatery",
+        "Status": "Open/Close",
+        "Average Rating": 4.5,
+        "Average Price Range": [20, 25],
+        "Address": "UP Cebu",
+        "Landmarks": "Near Azalea",
+        "Dining Accommodations": "Well furnished",
+        "Menu Offerings": 
+        [
+            {
+                "Category": "Meal",
+                "Items":
+                [
+                    {
+                        "Name": "Fried Chicken",
+                        "Details": "Made with chicken and some chicken mix",
+                        "Price": 45
+                    },
+                    {
+                        "Name": "Pork Adobo",
+                        "Details": "Made with sincere love and some aginomoto",
+                        "Price": 50
+                    }
+                ]
+            },
+            {
+                "Category": "Drink",
+                "Items":
+                [
+                    {
+                        "Name": "Orange Juice",
+                        "Details": "Made with Oranges",
+                        "Price": 50
+                    }
+                ]
+            }
+        ],
+        "User Reviews":
+        [
+            {
+                "User": "Josh",
+                "Review": "Quite Good"
+            },
+            {
+                "User": "Seron",
+                "Review": "Gana man siya"
+            }
+        ]
+    }
+]
