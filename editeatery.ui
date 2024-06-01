@@ -319,7 +319,7 @@
         <string>Num</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="pushButton_Submit">
        <property name="geometry">
         <rect>
          <x>0</x>

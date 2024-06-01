@@ -57,11 +57,15 @@ void MainWindow::on_Place1_clicked()
     eatery->show(); // Show the Eatery window
 
     this->hide(); // Hide the Main window
+
+    connect(eatery, &QObject::destroyed, eatery, &QObject::deleteLater); // deallocates when closed
 }
 
 void MainWindow::on_pushButton_Eatery_clicked()
 {
     AddEatery *addEatery = new AddEatery(this); // Declaration
     addEatery->show(); // Show the Eatery window
+
+    connect(addEatery, &QObject::destroyed, addEatery, &QObject::deleteLater); // deallocates when closed
 }
 
