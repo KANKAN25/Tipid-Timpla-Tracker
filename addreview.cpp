@@ -1,6 +1,5 @@
 #include "addreview.h"
 #include "ui_addreview.h"
-#include <iostream> // Include for debug output
 
 AddReview::AddReview(const QString& eateryName, QWidget *parent)
     : QDialog(parent)
@@ -11,17 +10,6 @@ AddReview::AddReview(const QString& eateryName, QWidget *parent)
 {
     ui->setupUi(this);
     this->setFixedSize(438, 157); // Add Review's fixed size
-
-    // Add debug output
-    std::cout << "User handler initialized." << std::endl;
-
-    // Verify if user information is loaded correctly
-    if (!userHandler.load()) {
-        std::cerr << "Failed to load user information." << std::endl;
-    } else {
-        std::string currentUser = userHandler.getCurrentUsername();
-        std::cout << "Current user: " << currentUser << std::endl;
-    }
 }
 
 AddReview::~AddReview()
@@ -35,11 +23,6 @@ void AddReview::on_submitButton_clicked()
     QString reviewMessage = ui->lineEdit->text();
 
     std::string currentUser = userHandler.getCurrentUsername();
-    if (currentUser.empty()) {
-        std::cerr << "Current user is empty." << std::endl;
-        return;
-    }
-
     std::string review = reviewMessage.toStdString(); // Convert QString to std::string because it doesn't accept it in Json Code
 
     // Load
@@ -52,7 +35,7 @@ void AddReview::on_submitButton_clicked()
 
     reviewHandler.receiveReview(currentUser, review); // Receive
 
-    reviewHandler.save(); // Save the review
+    reviewHandler.save(); // Save the review to
 
     this->close();
 }
