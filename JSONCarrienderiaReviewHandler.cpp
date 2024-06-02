@@ -4,6 +4,29 @@
 
 // To be polished and made
 
+JSONCarrienderiaReviewHandler::JSONCarrienderiaReviewHandler()
+{
+    initializeBuffers();
+}
+
+void JSONCarrienderiaReviewHandler::initializeBuffers()
+{
+
+    carrienderia["User Reviews"] = ordered_json::array();
+
+    ifstream file("CarriendariaList.json");
+    file >> jsonArray;
+    file.close();
+}
+
+void JSONCarrienderiaReviewHandler::receiveReview(const std::string user, const std::string name, const std::string review)
+{
+    // ordered_json newReview;
+
+
+    carrienderia["User Reviews"].push_back(ordered_json::array({{"User", name}, {"Review", review}}));
+}
+
 void JSONCarrienderiaReviewHandler::addReview(const std::string& category, const ordered_json& item)
 {
     // if (buffers.find(category) != buffers.end())
