@@ -37,7 +37,6 @@ void Eatery::on_pushButton_Reviews_clicked()
 void Eatery::on_pushButton_Edit_clicked()
 {
     EditEatery *editeatery = new EditEatery(this); //Declaration
-    this->close(); // Close the eatery window
     editeatery->show(); // Show the edit eatery window
 
     connect(editeatery, &QObject::destroyed, editeatery, &QObject::deleteLater); // deallocates when closed

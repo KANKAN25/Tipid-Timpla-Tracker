@@ -2,6 +2,8 @@
 #include <fstream>
 #include <iostream>
 
+#include <QDebug>
+
 JSONCarrienderiaMenuHandler::JSONCarrienderiaMenuHandler()
 {
     initializeBuffers();
@@ -86,7 +88,7 @@ bool JSONCarrienderiaMenuHandler::editItem(const std::string category, const std
 
     if(counters[category] == 0)
     {
-        // please add code here such that the ui is able to detect that there is no items to edit.
+        qWarning() << "Category is empty.";
         return false;
     }
 
@@ -103,7 +105,7 @@ void JSONCarrienderiaMenuHandler::deleteItem(const std::string& category, const 
 {
 
     if (counters[category] == 0) {
-        // UI should detect that there are no items to delete and do nothing
+        qWarning() << "Category is empty.";
         return;
     }
 

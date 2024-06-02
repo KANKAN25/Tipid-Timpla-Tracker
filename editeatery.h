@@ -15,6 +15,13 @@ public:
     explicit EditEatery(QWidget *parent = nullptr);
     ~EditEatery();
 
+private slots:
+    void on_pushButton_updateEatery_clicked();
+
+    void on_pushButton_updateMenu_clicked();
+
+    void on_pushButton_done_clicked();
+
 private:
     Ui::EditEatery *ui;
 };

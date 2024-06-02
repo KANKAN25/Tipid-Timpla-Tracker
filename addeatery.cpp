@@ -34,7 +34,7 @@ void AddEatery::on_pushButton_addEatery_clicked()
     std::string landmarks = ui->lineEdit_landmarks->text().toStdString();
     std::string accomodations = ui->lineEdit_accomodations->text().toStdString();
 
-    if (EateryName.empty() || status.empty() || address.empty() || landmarks.empty() || accomodations.empty()) {
+    if (EateryName.empty() || address.empty() || landmarks.empty() || accomodations.empty()) {
         QMessageBox::warning(this, "Input Error", "All fields must be filled out.");
         return;
     }
@@ -65,7 +65,7 @@ void AddEatery::on_pushButton_addMenu_clicked()
     double price = ui->lineEdit_price->text().toDouble();
     std::string details = ui->lineEdit_details->text().toStdString();
 
-    if (MenuName.empty() || category.empty() || price <= 0 || details.empty()) {
+    if (MenuName.empty() || price <= 0 || details.empty()) {
         QMessageBox::warning(this, "Input Error", "All menu fields must be filled out and price must be positive.");
         return;
     }

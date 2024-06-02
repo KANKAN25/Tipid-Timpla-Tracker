@@ -235,7 +235,7 @@
        <rect>
         <x>220</x>
         <y>40</y>
-        <width>191</width>
+        <width>192</width>
         <height>331</height>
        </rect>
       </property>
@@ -248,7 +248,7 @@
       <widget class="QLabel" name="Filters_10">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>5</x>
          <y>0</y>
          <width>121</width>
          <height>22</height>
@@ -270,7 +270,7 @@
         <rect>
          <x>0</x>
          <y>230</y>
-         <width>191</width>
+         <width>192</width>
          <height>24</height>
         </rect>
        </property>
@@ -298,7 +298,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Details</string>
+           <string> Details</string>
           </property>
          </widget>
         </item>
@@ -327,7 +327,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Name</string>
+           <string> Name</string>
           </property>
          </widget>
         </item>
@@ -356,7 +356,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Price</string>
+           <string> Price</string>
           </property>
          </widget>
         </item>
@@ -385,7 +385,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Category</string>
+           <string> Category</string>
           </property>
          </widget>
         </item>
@@ -410,7 +410,7 @@
         <rect>
          <x>0</x>
          <y>290</y>
-         <width>191</width>
+         <width>192</width>
          <height>24</height>
         </rect>
        </property>
@@ -423,7 +423,7 @@
         <rect>
          <x>0</x>
          <y>260</y>
-         <width>191</width>
+         <width>192</width>
          <height>24</height>
         </rect>
        </property>

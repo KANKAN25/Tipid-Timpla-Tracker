@@ -39,7 +39,7 @@
        </font>
       </property>
       <property name="text">
-       <string>software</string>
+       <string> software</string>
       </property>
      </widget>
      <widget class="QGroupBox" name="groupBox">
