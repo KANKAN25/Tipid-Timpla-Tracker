@@ -42,5 +42,8 @@ void Reviews::on_pushButton_AddReview_clicked()
 {
     AddReview *addreview = new AddReview(this); // Declaration
     addreview->show(); // Show the Add Review window
+
+    connect(addreview, &QObject::destroyed, addreview, &QObject::deleteLater); // deallocates when closed
+
 }
 

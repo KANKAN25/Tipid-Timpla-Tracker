@@ -56,5 +56,5 @@ compile_commands.json
 
 *_qmlcache.qrc
 .vscode/settings.json
-qt-test.code-workspace
 .vscode/c_cpp_properties.json
+qt-test.code-workspace

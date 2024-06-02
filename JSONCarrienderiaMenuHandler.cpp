@@ -89,9 +89,9 @@ bool JSONCarrienderiaMenuHandler::editItem(const std::string category, const std
     if (buffers.find(category) != buffers.end() && index < buffers[category].size())
     {
         buffers[category][index] = itemReceiver;
-        itemReceiver.clear(); // The clear serves to ensure that the next addition/edit, it is clean
-        return true;
+        itemReceiver.clear(); // The clear serves to ensure that the next addition/edit, it is clean        
     }
+    return true;
 }
 
 // This index comes from an external source, namely from the user through pressing buttons that equate to numbers.
@@ -107,9 +107,9 @@ bool JSONCarrienderiaMenuHandler::deleteItem(const std::string& category, size_t
     if (buffers.find(category) != buffers.end() && index < buffers[category].size())
     {
         buffers[category].erase(buffers[category].begin() + index);
-        counters[category]--;
-        return true;
+        counters[category]--;        
     }
+    return true;
 }
 
 // This function is called by the load function to search for a carrienderia by name.

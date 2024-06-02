@@ -23,6 +23,8 @@ private slots:
 
     void on_pushButton_Reviews_clicked();
 
+    void on_pushButton_Edit_clicked();
+
 private:
     Ui::Eatery *ui;
     MainWindow *mainWindow; // Pointer to MainWindow

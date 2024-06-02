@@ -4,9 +4,6 @@
 #include "json.hpp"
 #include "createaccount.h"
 #include "JSONFileInitializer.h"
-#include "JSONCarrienderiaHandler.h"
-#include "JSONCarrienderiaMenuHandler.h"
-#include "JSONUserHandler.h"
 #include <fstream>
 #include <iostream>
 #include <qstring.h>
@@ -99,12 +96,12 @@ int main(int argc, char *argv[])
         handler.save();
 
     // Example usage of using Menu Handling to add to existing carrienderia menu
-        menus.load("CarriendariaList.json", 2); // the third carrienderia
+        menus.Menuload("CarriendariaList.json", 2); // the third carrienderia
         menus.addItem("Drinks", "CokaCola", "Local Style", 30);
-        menus.save("CarriendariaList.json");
+        menus.Menusave("CarriendariaList.json");
 
     // Example usage of using Menu Handling to edit existing carrienderia menu
-        menus.load("CarriendariaList.json", 2);
+        menus.Menuload("CarriendariaList.json", 2);
         menus.editItem("Drinks", "CokaCola", "Local Style Premium", 40, 0); // 0 means the first item in the drinks category
-        menus.save("CarriendariaList.json");
+        menus.Menusave("CarriendariaList.json");
 */
