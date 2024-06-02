@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-    JSONFileInitializer initcarrienderialist("CarrinderiaList.json");
+    JSONFileInitializer initcarrienderialist("CarriendariaList.json");
     if (!initcarrienderialist.initialize()) {
         return EXIT_FAILURE;
     }
