@@ -27,8 +27,10 @@ void Eatery::on_back_clicked()
 
 void Eatery::on_pushButton_Reviews_clicked()
 {
-    Reviews *reviews = new Reviews(this); // Declaration
-    reviews->show(); // Show the Reviews' window
+    QString eateryName = ui->Filters->text(); // Get the text of the "Filters"
+
+    Reviews *reviews = new Reviews(eateryName, this); // Declaration
+    reviews->show(); // Show the Reviews window
 
     connect(reviews, &QObject::destroyed, reviews, &QObject::deleteLater); // deallocates when closed
 }

@@ -70,7 +70,6 @@ bool JSONUserHandler::findUsername(const std::string& username)
 
     return founduser;
 }
-
 bool JSONUserHandler::findUser(const std::string& username, const std::string& password)
 {
     founduser = false;
@@ -92,6 +91,7 @@ bool JSONUserHandler::findUser(const std::string& username, const std::string& p
     }
     return founduser && foundpass;
 }
+
 
 std::string JSONUserHandler::getCurrentUsername() const {
     return curusername;

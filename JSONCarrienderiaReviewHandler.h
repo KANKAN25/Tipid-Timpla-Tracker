@@ -15,6 +15,9 @@ class JSONCarrienderiaReviewHandler
 public:
     JSONCarrienderiaReviewHandler();
 
+    const ordered_json& getCarrienderia() const {
+        return carrienderia;
+    }
     void receiveReview(const std::string user, const std::string review);
     void editReview(const std::string user, std::string name);
     void deleteReview(const std::string user);
@@ -22,6 +25,8 @@ public:
     bool findCarrienderiaByName(const ordered_json& jsonArray, const std::string& name, ordered_json& carrienderia);
     bool load(const std::string& name);
     void save();
+
+    ordered_json getReviews() const { return carrienderia["User Reviews"]; } //to access reviews
 
     ordered_json jsonArray; // Buffers for each category as well as counters and items
 private:
