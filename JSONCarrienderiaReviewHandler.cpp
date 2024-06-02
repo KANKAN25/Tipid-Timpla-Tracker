@@ -2,51 +2,109 @@
 #include <fstream>
 #include <iostream>
 
-// To be polished and made
-
-void JSONCarrienderiaReviewHandler::addReview(const std::string& category, const ordered_json& item)
+JSONCarrienderiaReviewHandler::JSONCarrienderiaReviewHandler()
 {
-    // if (buffers.find(category) != buffers.end())
-    // {
-    //     buffers[category].push_back(item);
-    //     counters[category]++;
-    // }
+    initializeBuffers();
 }
 
-void JSONCarrienderiaReviewHandler::editReview(const std::string& category, size_t index, const ordered_json& item)
+void JSONCarrienderiaReviewHandler::initializeBuffers()
 {
-    // if (buffers.find(category) != buffers.end() && index < buffers[category].size())
-    // {
-    //     buffers[category][index] = item;
-    // }
+
+    carrienderia["User Reviews"] = ordered_json::array();
+
+    ifstream file("CarriendariaList.json");
+    file >> jsonArray;
+    file.close();
 }
 
-void JSONCarrienderiaReviewHandler::deleteReview(const std::string& category, size_t index)
+void JSONCarrienderiaReviewHandler::receiveReview(const std::string user, const std::string review)
 {
-    // if (buffers.find(category) != buffers.end() && index < buffers[category].size())
-    // {
-    //     buffers[category].erase(buffers[category].begin() + index);
-    //     counters[category]--;
-    // }
+    carrienderia["User Reviews"].push_back({{"User", user}, {"Review", review}});
 }
 
-void JSONCarrienderiaReviewHandler::save(const std::string& filename)
+// This function would use the user input as the search condition, and then replaces that review with the entered review
+void JSONCarrienderiaReviewHandler::editReview(const std::string user, const std::string review)
 {
-    // for (const auto& pair : buffers)
-    // {
-    //     carrienderia["Menu Offerings"][pair.first] = pair.second;
-    // }
+    auto& itemsArray = carrienderia["User Reviews"];
 
-    // std::ofstream file(filename);
-    // if (!file.is_open())
-    // {
-    //     std::cerr << "Unable to open file " << filename << std::endl;
-    //     return;
-    // }
-    // file << carrienderia.dump(4);
-    // file.close();
+    // Iterate over the items array using an iterator
+    for (auto it = itemsArray.begin(); it != itemsArray.end(); it++)
+    {
+        if ((*it)["User"] == user)
+        {
+            (*it)["Review"] = review; // Erase the item and get the next iterator
+            break;
+        }
+    }
 }
 
-const ordered_json& JSONCarrienderiaReviewHandler::getItems(const std::string& category) const {
-    // return buffers.at(category);
+void JSONCarrienderiaReviewHandler::deleteReview(const std::string user)
+{
+    auto& itemsArray = carrienderia["User Reviews"];
+
+    // Iterate over the items array using an iterator
+    for (auto it = itemsArray.begin(); it != itemsArray.end(); it++)
+    {
+        if ((*it)["User"] == user)
+        {
+            it = itemsArray.erase(it); // Erase the item and get the next iterator
+            break;
+        }
+    }
+}
+
+bool JSONCarrienderiaReviewHandler::findCarrienderiaByName(const ordered_json& jsonArray, const std::string& name, ordered_json& carrienderia)
+{
+    for (const auto& item : jsonArray)
+    {
+        if (item["Name"] == name)
+        {
+            carrienderia = item;
+            return true;
+        }
+    }
+    return false;
+}
+
+
+bool JSONCarrienderiaReviewHandler::load(const std::string& name)
+{
+    ifstream file("CarriendariaList.json");
+    if (!file.is_open())
+    {
+        std::cerr << "Unable to open file CarriendariaList.json" << std::endl;
+        return false;
+    }
+
+    file >> jsonArray;
+    file.close();
+
+    if (!findCarrienderiaByName(jsonArray, name, carrienderia))
+    {
+        std::cerr << "Carrienderia with name " << name << " not found." << std::endl;
+        return false;
+    }
+    return true;
+}
+
+void JSONCarrienderiaReviewHandler::save()
+{
+
+    for (auto& item : jsonArray)
+    {
+        if (item["Name"] == carrienderia["Name"])
+        {
+            item = carrienderia;
+            break;
+        }
+    }
+
+    std::ofstream outfile("CarriendariaList.json");
+    if (!outfile.is_open())
+    {
+        std::cerr << "Unable to open file CarriendariaList.json" << std::endl;
+        return;
+    }
+    outfile << jsonArray.dump(4);
+    outfile.close();
 }

@@ -10,6 +10,10 @@ JSONCarrienderiaMenuHandler::JSONCarrienderiaMenuHandler()
 // A function that initializes static variables accessible by the class
 void JSONCarrienderiaMenuHandler::initializeBuffers()
 {
+    ifstream file("CarriendariaList.json");
+    file >> jsonArray;
+    file.close();
+
     buffers["Meals"] = ordered_json::array();
     buffers["Drinks"] = ordered_json::array();
     counters["Meals"] = 0;  // These two takes the count of the number of existing items in the
@@ -89,27 +93,46 @@ bool JSONCarrienderiaMenuHandler::editItem(const std::string category, const std
     if (buffers.find(category) != buffers.end() && index < buffers[category].size())
     {
         buffers[category][index] = itemReceiver;
-        itemReceiver.clear(); // The clear serves to ensure that the next addition/edit, it is clean        
+        itemReceiver.clear(); // The clear serves to ensure that the next addition/edit, it is clean
     }
     return true;
 }
 
 // This index comes from an external source, namely from the user through pressing buttons that equate to numbers.
-bool JSONCarrienderiaMenuHandler::deleteItem(const std::string& category, size_t index)
+void JSONCarrienderiaMenuHandler::deleteItem(const std::string& category, const std::string name)
 {
 
-    if(counters[category] == 0)
-    {
-        // please add code here such that the ui is able to detect that there is no items to delete and does nothing
-        return false;
+    if (counters[category] == 0) {
+        // UI should detect that there are no items to delete and do nothing
+        return;
     }
 
-    if (buffers.find(category) != buffers.end() && index < buffers[category].size())
+    auto& itemsArray = buffers[category];
+    bool itemDeleted = false;
+
+    // Iterate over the items array using an iterator
+    for (auto it = itemsArray.begin(); it != itemsArray.end(); it++)
     {
-        buffers[category].erase(buffers[category].begin() + index);
-        counters[category]--;        
+        if ((*it)["Name"] == name)
+        {
+            it = itemsArray.erase(it); // Erase the item and get the next iterator
+            itemDeleted = true;
+            break;
+        }
     }
-    return true;
+
+    // If an item was deleted, decrement the counter
+    if (itemDeleted)
+    {
+        --counters[category];
+    }
+}
+
+void JSONCarrienderiaMenuHandler::deleteItem(const std::string& category, size_t index) {
+    if (buffers.find(category) != buffers.end() && index < buffers[category].size()) {
+        buffers[category].erase(buffers[category].begin() + index);
+        counters[category]--;
+    }
 }
 
 // This function is called by the load function to search for a carrienderia by name.
@@ -140,28 +163,11 @@ void JSONCarrienderiaMenuHandler::initializeBuffersAndCounters(const ordered_jso
     }
 }
 
-/*  IMPORTANT!
- *
- *  Filename should be 'CarrienderiaList.json' when the button or so that's responsible for sending the information is clicked.
- *
- */
-
-
 // this is the load function that is used to load an existing carrienderia for editing by name.
 // carrienderia variable represesnts the carrienderia being edited.
 // takes one carrienderia from jsonArray and stores it in carrienderia
-bool JSONCarrienderiaMenuHandler::load(const std::string& filename, const std::string& name)
+bool JSONCarrienderiaMenuHandler::load(const std::string& name)
 {
-    std::ifstream file(filename);
-    if (!file.is_open())
-    {
-        std::cerr << "Unable to open file " << filename << std::endl;
-        return false;
-    }
-
-    ordered_json jsonArray; // This is the entire carrienderia list
-    file >> jsonArray;
-    file.close();
 
     if (!findCarrienderiaByName(jsonArray, name, carrienderia))
     {
@@ -176,19 +182,8 @@ bool JSONCarrienderiaMenuHandler::load(const std::string& filename, const std::s
 // Index is the paremeter that is used to specify which carrienderia to load, which is specified by the user.
 // buffers contains the items from the respective carrienderia and counters contains the number of items in each category.
 // both buffers and counters are kept in sync with the carrienderia, with carrienderia being the main JSON object.
-bool JSONCarrienderiaMenuHandler::load(const std::string& filename, size_t index)
+bool JSONCarrienderiaMenuHandler::load(size_t index)
 {
-    std::ifstream file(filename);
-    if (!file.is_open())
-    {
-        std::cerr << "Unable to open file " << filename << std::endl;
-        return false;
-    }
-
-    ordered_json jsonArray;
-    file >> jsonArray;
-    file.close();
-
     if (index >= jsonArray.size())
     {
         std::cerr << "Index out of range." << std::endl;
@@ -203,16 +198,8 @@ bool JSONCarrienderiaMenuHandler::load(const std::string& filename, size_t index
 
 // Save: This function will first check if the carrienderia exists. If it does, it will update the carrienderia with the new details.
 // If it doesn't, it will add the carrienderia to the JSON array.
-void JSONCarrienderiaMenuHandler::save(const std::string& filename)
+void JSONCarrienderiaMenuHandler::save()
 {
-    std::ifstream file(filename);
-    ordered_json jsonArray;
-    if (file.is_open())
-    {
-        file >> jsonArray;
-        file.close();
-    }
-
     for (auto& offering : carrienderia["Menu Offerings"])
     {
         std::string category = offering["Category"];
@@ -242,31 +229,31 @@ void JSONCarrienderiaMenuHandler::save(const std::string& filename)
         jsonArray.push_back(carrienderia);
     }
 
-    std::ofstream outFile(filename);
+    std::ofstream outFile("CarriendariaList.json");
     if (!outFile.is_open())
     {
-        std::cerr << "Unable to open file " << filename << std::endl;
+        std::cerr << "Unable to open file CarriendariaList.json" << std::endl;
         return;
     }
     outFile << jsonArray.dump(4);
     outFile.close();
 }
 
-    // General flow of the code in terms of pseudo code:
-    // 1. Load carrienderia, this is where the user chooses which carrienderia they want to edit
-        // -  facilitated through an external source providing the value for the index to choose which carienderia
-        // -  Side note, there will be another function that would count the total amount of carrienderias and
-        // -  send it to a function that would display the names of the carrienderias to choose from
-    // 2. Manipulation of items in the carrienderia
-        // - The buffers will be filled with the items coming from the carienderia.
-        // - key "Items" will have its value pair be equal to the buffers json array for that specific category
-        // + Avoids the problem of repeated items in the same category
-        // + This streamlines the manipulation of items in the carrienderia as it is all stored in a buffer that is yet to be finalized.
-    // 3. Get buffer items to show to user
-        // - This is where the user would view the items in the buffer so that they can keep track of what they plan to add or possibly delete.
-        // - the counters for each category will be used to keep track of how many items there are in each category, which will be the basis for the limit of what the user can enter for the index before being invalid
-    // 4. Save carrienderia
-        // -  This is where the user would save the changes by way of having the item keys have their value pairs be equal to the buffers of that category
+// General flow of the code in terms of pseudo code:
+// 1. Load carrienderia, this is where the user chooses which carrienderia they want to edit
+// -  facilitated through an external source providing the value for the index to choose which carienderia
+// -  Side note, there will be another function that would count the total amount of carrienderias and
+// -  send it to a function that would display the names of the carrienderias to choose from
+// 2. Manipulation of items in the carrienderia
+// - The buffers will be filled with the items coming from the carienderia.
+// - key "Items" will have its value pair be equal to the buffers json array for that specific category
+// + Avoids the problem of repeated items in the same category
+// + This streamlines the manipulation of items in the carrienderia as it is all stored in a buffer that is yet to be finalized.
+// 3. Get buffer items to show to user
+// - This is where the user would view the items in the buffer so that they can keep track of what they plan to add or possibly delete.
+// - the counters for each category will be used to keep track of how many items there are in each category, which will be the basis for the limit of what the user can enter for the index before being invalid
+// 4. Save carrienderia
+// -  This is where the user would save the changes by way of having the item keys have their value pairs be equal to the buffers of that category
 
 /* Template on how the potential code would look like:
 int main() {
@@ -296,7 +283,4 @@ int main() {
 
     return 0;
 }
-
-
-
 */
