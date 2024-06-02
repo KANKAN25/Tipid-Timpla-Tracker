@@ -29,7 +29,7 @@ void AddEatery::on_pushButton_addEatery_clicked()
     JSONCarrienderiaHandler handler;
 
     std::string EateryName = ui->lineEdit_eateryName->text().toStdString();
-    std::string status = ui->lineEdit_status->text().toStdString();
+    std::string status = ui->comboBox_status->currentText().toStdString();
     std::string address = ui->lineEdit_address->text().toStdString();
     std::string landmarks = ui->lineEdit_landmarks->text().toStdString();
     std::string accomodations = ui->lineEdit_accomodations->text().toStdString();
@@ -49,7 +49,7 @@ void AddEatery::on_pushButton_addEatery_clicked()
 
     ui->pushButton_addMenu->setEnabled(true);
 
-    qDebug() << "Eatery Succesfully Added!";
+    QMessageBox::information(this, "Success", "Eatery Successfully Added!");
 }
 
 
@@ -62,7 +62,6 @@ void AddEatery::on_pushButton_addMenu_clicked()
 
     std::string MenuName = ui->lineEdit_menuName->text().toStdString();
     std::string category = ui->comboBox_category->currentText().toStdString();
-    qDebug() << "Category" << category;
     double price = ui->lineEdit_price->text().toDouble();
     std::string details = ui->lineEdit_details->text().toStdString();
 
@@ -73,6 +72,12 @@ void AddEatery::on_pushButton_addMenu_clicked()
 
     menus.addItem(category, MenuName, details, price);
     menus.save();
+
+    QMessageBox::information(this, "Success", "Menu Successfully Added!");
+
+    ui->lineEdit_menuName->clear();
+    ui->lineEdit_price->clear();
+    ui->lineEdit_details->clear();
 }
 
 
