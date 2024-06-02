@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>438</width>
-    <height>401</height>
+    <width>444</width>
+    <height>430</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -51,7 +51,7 @@
         <x>0</x>
         <y>60</y>
         <width>211</width>
-        <height>291</height>
+        <height>351</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -60,13 +60,13 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
          <y>10</y>
          <width>193</width>
-         <height>271</height>
+         <height>324</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -89,7 +89,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="lineEdit"/>
+             <widget class="QLineEdit" name="lineEdit_eateryName"/>
             </item>
            </layout>
           </item>
@@ -108,7 +108,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_2"/>
+           <widget class="QLineEdit" name="lineEdit_status"/>
           </item>
          </layout>
         </item>
@@ -129,7 +129,45 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_3"/>
+           <widget class="QLineEdit" name="lineEdit_address">
+            <property name="palette">
+             <palette>
+              <active>
+               <colorrole role="Button">
+                <brush brushstyle="SolidPattern">
+                 <color alpha="255">
+                  <red>136</red>
+                  <green>136</green>
+                  <blue>136</blue>
+                 </color>
+                </brush>
+               </colorrole>
+              </active>
+              <inactive>
+               <colorrole role="Button">
+                <brush brushstyle="SolidPattern">
+                 <color alpha="255">
+                  <red>136</red>
+                  <green>136</green>
+                  <blue>136</blue>
+                 </color>
+                </brush>
+               </colorrole>
+              </inactive>
+              <disabled>
+               <colorrole role="Button">
+                <brush brushstyle="SolidPattern">
+                 <color alpha="255">
+                  <red>136</red>
+                  <green>136</green>
+                  <blue>136</blue>
+                 </color>
+                </brush>
+               </colorrole>
+              </disabled>
+             </palette>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -150,7 +188,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_7"/>
+           <widget class="QLineEdit" name="lineEdit_landmarks"/>
           </item>
          </layout>
         </item>
@@ -174,7 +212,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_6"/>
+           <widget class="QLineEdit" name="lineEdit_accomodations"/>
           </item>
          </layout>
         </item>
@@ -216,17 +254,17 @@
         <string>Menu</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="pushButton_addEatery">
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>278</y>
+         <y>230</y>
          <width>191</width>
          <height>24</height>
         </rect>
        </property>
        <property name="text">
-        <string>Submit Eatery</string>
+        <string>Add Eatery</string>
        </property>
       </widget>
       <widget class="QWidget" name="layoutWidget">
@@ -235,7 +273,7 @@
          <x>0</x>
          <y>140</y>
          <width>191</width>
-         <height>46</height>
+         <height>58</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -254,17 +292,17 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_11"/>
+         <widget class="QLineEdit" name="lineEdit_details"/>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>30</y>
          <width>191</width>
-         <height>46</height>
+         <height>58</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -283,17 +321,17 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_9"/>
+         <widget class="QLineEdit" name="lineEdit_menuName"/>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>100</x>
          <y>82</y>
          <width>91</width>
-         <height>46</height>
+         <height>58</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -312,17 +350,17 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_10"/>
+         <widget class="QLineEdit" name="lineEdit_price"/>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>82</y>
          <width>91</width>
-         <height>46</height>
+         <height>58</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -341,46 +379,46 @@
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="comboBox">
+         <widget class="QComboBox" name="comboBox_category">
           <item>
            <property name="text">
-            <string>Meal</string>
+            <string>Meals</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Drink</string>
+            <string>Drinks</string>
            </property>
           </item>
          </widget>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QPushButton" name="pushButton_done">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>200</y>
-         <width>158</width>
-         <height>26</height>
+         <x>0</x>
+         <y>290</y>
+         <width>191</width>
+         <height>24</height>
         </rect>
        </property>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QPushButton" name="pushButton">
-          <property name="text">
-           <string>Back</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="text">
-           <string>Next</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <property name="text">
+        <string>Done</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_addMenu">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>260</y>
+         <width>191</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add Menu</string>
+       </property>
       </widget>
      </widget>
     </widget>

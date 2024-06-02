@@ -8,7 +8,7 @@
 #include <iostream>
 #include <qstring.h>
 #include <QDir>
-#include "createaccount.h"
+#include "addeatery.h"
 
 
 using json = nlohmann::json;
@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
     Login loginDialog;
     MainWindow mainWindow;
     CreateAccount createnewaccount;
+    //AddEatery addeatery;
 
     // Initializers for both files to be used if absent
     JSONFileInitializer inituserlist("UserInfo.json");
