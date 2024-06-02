@@ -268,3 +268,35 @@ void JSONCarrienderiaMenuHandler::save(const std::string& filename)
     // 4. Save carrienderia
         // -  This is where the user would save the changes by way of having the item keys have their value pairs be equal to the buffers of that category
 
+/* Template on how the potential code would look like:
+int main() {
+
+    JSONCarrienderiaMenuHandler handler;
+
+    if (handler.load("CarrienderiaList.json", 1)) {
+        std::cout << "Loaded " << carrienderia["Name"] <<  " successfully." << std::endl;
+    } else {
+        std::cout << "Failed to load Carrienderia 1." << std::endl;
+    }
+
+    // Example usage of adding items into categories
+    handler.addItem("Meals", "Pork Adobo", "Delicious pork adobo", 100);
+    handler.addItem("Meals", "Ten Colored Wings", "Divine and Gracious, Supreme", 999);
+    handler.addItem("Drinks", "Halo-Halo", "Refreshing halo-halo", 50);
+
+    // Example usage of edit item and delete item through index
+    int index = 1;
+    handler.editItem("Drinks", "Ambrosium", "Indulgence made Liquid", 50, --index);
+    handler.deleteItem("Drinks", --index);
+
+    // Finalizes all the changes and saves ii all into the JSON file
+    handler.save("CarrienderiaList.json");
+
+
+
+    return 0;
+}
+
+
+
+*/
