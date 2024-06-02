@@ -32,9 +32,6 @@ public:
     // Use this as the basis of the error handling when there is zero carrienderias.
     size_t countCarrienderias(const ordered_json& jsonArray);
 
-    // Get items from the specified category
-    const ordered_json& getItems(const std::string& category) const;
-
 private:
     // Receive data from external sources and create an item JSON object
     void receiveItem(const std::string category, const std::string name, const std::string details, int price);
