@@ -4,6 +4,8 @@
 #include "json.hpp"
 #include "createaccount.h"
 #include "JSONFileInitializer.h"
+#include "JSONCarrienderiaHandler.h"
+#include "JSONCarrienderiaMenuHandler.h"
 #include "JSONUserHandler.h"
 #include <fstream>
 #include <iostream>
@@ -77,3 +79,32 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
+
+// Usage Guide ofr Handler and Menu Handler
+/*
+        JSONCarrienderiaHandler handler;
+        JSONCarrienderiaMenuHandler menus;
+
+    // Example usage of adding a carrienderia
+        no loading means we are adding a new carrienderia, blank slate
+        handler.receiveAttribute("Name", "Grand Hospitality");
+        handler.receiveAttribute("Average Rating", 4);
+        handler.save();
+
+    // Example usage of editing a carrienderia
+        handler.load(2);     // the third carrienderia
+        handler.receiveAttribute("Name", "Grand Hospitality 2");
+        handler.receiveAttribute("Average Rating", 5);
+        handler.editEatery("Grand Hospitality");
+        handler.save();
+
+    // Example usage of using Menu Handling to add to existing carrienderia menu
+        menus.load("CarriendariaList.json", 2); // the third carrienderia
+        menus.addItem("Drinks", "CokaCola", "Local Style", 30);
+        menus.save("CarriendariaList.json");
+
+    // Example usage of using Menu Handling to edit existing carrienderia menu
+        menus.load("CarriendariaList.json", 2);
+        menus.editItem("Drinks", "CokaCola", "Local Style Premium", 40, 0); // 0 means the first item in the drinks category
+        menus.save("CarriendariaList.json");
+*/
