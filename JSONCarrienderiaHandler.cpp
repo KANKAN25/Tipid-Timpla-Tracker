@@ -1,143 +1,103 @@
-#include "JSONCarrienderiaMenuHandler.h"
+#include "JSONCarrienderiaHandler.h"
+#include "json.hpp"
 #include <fstream>
 #include <iostream>
 
-JSONCarrienderiaMenuHandler::JSONCarrienderiaMenuHandler()
+using ordered_json = nlohmann::ordered_json;
+
+// This is a constructor, thus would mean that anything made by the class would then have the buffers be initialized.
+JSONCarrienderiaHandler::JSONCarrienderiaHandler()
 {
     initializeBuffers();
 }
 
-// A function that initializes static variables accessible by the class
-void JSONCarrienderiaMenuHandler::initializeBuffers()
+void JSONCarrienderiaHandler::initializeBuffers()
 {
+    carrienderia["Name"] = "";
+    carrienderia["Status"] = "";
+    carrienderia["Average Rating"] = 0.0;
+    carrienderia["Average Price Range"] = ordered_json::array();
+    carrienderia["Address"] = "";
+    carrienderia["Landmarks"] = "";
+    carrienderia["Dining Accomodations"] = "";
+    carrienderia["Menu Offerings"] = ordered_json::array({{{"Category", "Meals"}, {"Items", ordered_json::array()}}, {{"Category", "Drinks"}, {"Items", ordered_json::array()}}});
+    carrienderia["User Reviews"] = ordered_json::array();
+
     ifstream file("CarriendariaList.json");
     file >> jsonArray;
     file.close();
-
-    buffers["Meals"] = ordered_json::array();
-    buffers["Drinks"] = ordered_json::array();
-    counters["Meals"] = 0;  // These two takes the count of the number of existing items in the
-    counters["Drinks"] = 0; // categories, hence please use this as the basis for the error handling
-}                           // when there isn't any existing items to manipulate. Edit and Delete functions are noted for this
-
-size_t JSONCarrienderiaMenuHandler::countCarrienderias(const ordered_json& jsonArray) {
-    return jsonArray.size();
 }
 
-// This function is intended to receive data from external sources and create an item JSON object, coming from three UI input fields.
-void JSONCarrienderiaMenuHandler::receiveItem(const std::string category, const std::string name, const std::string details, int price)
+// Function overloading can be done for the following to not have
+void JSONCarrienderiaHandler::receiveAttribute(const std::string key, const std::string value)
 {
-    ordered_json newItem;
-    newItem["Name"] = name;
-    newItem["Details"] = details;
-    newItem["Price"] = price;
-    itemReceiver = newItem;
+    carrienderia[key] = value;
 }
 
-// This function is called within the addItem function, intended to recieve the data from the external sources.
-void JSONCarrienderiaMenuHandler::addItem(const std::string category, const std::string name, const std::string details, int price)
+// This is for the ratings
+void JSONCarrienderiaHandler::receiveAttribute(const std::string key, const float value)
 {
-    receiveItem(category, name, details, price);
+    carrienderia[key] = value;
+}
 
-    if (buffers.find(category) != buffers.end())
+// This is for the price range since the price range would accep two values of
+void JSONCarrienderiaHandler::receiveAttribute(const std::string key, const float value1, const float value2)
+{
+    carrienderia[key] = ordered_json::array({value1,value2});;
+}
+
+void JSONCarrienderiaHandler::addEatery()
+{
+    jsonArray.push_back(carrienderia);
+}
+
+bool JSONCarrienderiaHandler::editEatery(const std::string& name)
+{
+    for (auto& item : jsonArray)
     {
-        buffers[category].push_back(itemReceiver);
-        counters[category]++;
-        itemReceiver.clear();
-    }
-}
-
-/* The following is for visualization of what's being affected bythe addItem and other item manipulation functions
- * Essentially, each buffer[categoryname] has the items for the respective cetagory for each object of the menu offerings
-"Menu Offerings":
-    [
-        { // The json array of Items goes to buffers["Meals"]
-            "Category": "Meals",
-            "Items": [
-                {
-                    "Name": "Mealname",
-                    "Details": "Mealdetail",
-                    "Price": 45
-                }
-            ]
-        },
-        { // And the items of this category goes to buffers["Drinks"]
-            "Category": "Drinks",
-            "Items": [
-                {
-                    "Name": "Drinkname",
-                    "Details": "DrinkDetail",
-                    "Price": 0
-                }
-            ]
+        if (item["Name"] == name)
+        {
+            item = carrienderia;
+            save();
+            return true;
         }
-    ]
- */
-
-// The logic for this is similar to addItem function, however instead of appending it to the json array
-// it instead locates the chosen object via the index, and ovewrites it with the newly recieved object
-// It will check if the index is within the bounds of the category.
-// If it is, it will replace the item at the specified index with the new item.
-// Index is a specific parameter that comes from button presses that equate to a number.
-// Again, like the addItem function, this happens after the receiveItem function.
-bool JSONCarrienderiaMenuHandler::editItem(const std::string category, const std::string name, const std::string details, int price, size_t index)
-{
-    receiveItem(category, name, details, price);
-
-    if(counters[category] == 0)
-    {
-        // please add code here such that the ui is able to detect that there is no items to edit.
-        return false;
     }
 
-    if (buffers.find(category) != buffers.end() && index < buffers[category].size())
-    {
-        buffers[category][index] = itemReceiver;
-        itemReceiver.clear(); // The clear serves to ensure that the next addition/edit, it is clean
-    }
-    return true;
+    std::cerr << "Carrienderia with name " << name << " not found for editing." << std::endl;
+    return false;
 }
-
-// This index comes from an external source, namely from the user through pressing buttons that equate to numbers.
-void JSONCarrienderiaMenuHandler::deleteItem(const std::string& category, const std::string name)
+// Delete an eatery by name
+bool JSONCarrienderiaHandler::deleteEatery(const std::string& name)
 {
-
-    if (counters[category] == 0) {
-        // UI should detect that there are no items to delete and do nothing
-        return;
-    }
-
-    auto& itemsArray = buffers[category];
-    bool itemDeleted = false;
-
-    // Iterate over the items array using an iterator
-    for (auto it = itemsArray.begin(); it != itemsArray.end(); it++)
+    for (auto it = jsonArray.begin(); it != jsonArray.end(); ++it)
     {
         if ((*it)["Name"] == name)
         {
-            it = itemsArray.erase(it); // Erase the item and get the next iterator
-            itemDeleted = true;
-            break;
+            jsonArray.erase(it);
+            save();
+            return true;
         }
     }
 
-    // If an item was deleted, decrement the counter
-    if (itemDeleted)
+    std::cerr << "Carrienderia with name " << name << " not found for deletion." << std::endl;
+    return false;
+}
+
+// Delete an eatery by index
+bool JSONCarrienderiaHandler::deleteEatery(size_t index)
+{
+    if (index < jsonArray.size())
     {
-        --counters[category];
+        jsonArray.erase(jsonArray.begin() + index);
+        save();
+        return true;
     }
+
+    std::cerr << "Index out of range for deletion." << std::endl;
+    return false;
 }
 
-void JSONCarrienderiaMenuHandler::deleteItem(const std::string& category, size_t index) {
-    if (buffers.find(category) != buffers.end() && index < buffers[category].size()) {
-        buffers[category].erase(buffers[category].begin() + index);
-        counters[category]--;
-    }
-}
-
-// This function is called by the load function to search for a carrienderia by name.
-// jsonArray represents the entire carrienderia array, with name being the key to compare. Carrienderia represents the specific carrienderia found.
-bool JSONCarrienderiaMenuHandler::findCarrienderiaByName(const ordered_json& jsonArray, const std::string& name, ordered_json& carrienderia)
+bool JSONCarrienderiaHandler::findCarrienderiaByName(const ordered_json& jsonArray, const std::string& name, ordered_json& carrienderia)
 {
     for (const auto& item : jsonArray)
     {
@@ -150,39 +110,22 @@ bool JSONCarrienderiaMenuHandler::findCarrienderiaByName(const ordered_json& jso
     return false;
 }
 
-// This function is a sub function, to be used in the load functions
-// Essentially takes in the carrienderia, representing just one eatery, containing all attributes
-// And distributes the contents into
-void JSONCarrienderiaMenuHandler::initializeBuffersAndCounters(const ordered_json& carrienderia)
+// Load carrienderia list from file
+// This function is used by the eatery manipulation functions
+// Essentially adding into
+// Load a carrienderia by name
+bool JSONCarrienderiaHandler::load(const std::string& name)
 {
-    for (const auto& offering : carrienderia["Menu Offerings"])
-    {
-        std::string category = offering["Category"];
-        buffers[category] = offering["Items"];
-        counters[category] = buffers[category].size();
-    }
-}
-
-// this is the load function that is used to load an existing carrienderia for editing by name.
-// carrienderia variable represesnts the carrienderia being edited.
-// takes one carrienderia from jsonArray and stores it in carrienderia
-bool JSONCarrienderiaMenuHandler::load(const std::string& name)
-{
-
     if (!findCarrienderiaByName(jsonArray, name, carrienderia))
     {
         std::cerr << "Carrienderia with name " << name << " not found." << std::endl;
         return false;
     }
-
-    initializeBuffersAndCounters(carrienderia);
     return true;
 }
 
-// Index is the paremeter that is used to specify which carrienderia to load, which is specified by the user.
-// buffers contains the items from the respective carrienderia and counters contains the number of items in each category.
-// both buffers and counters are kept in sync with the carrienderia, with carrienderia being the main JSON object.
-bool JSONCarrienderiaMenuHandler::load(size_t index)
+// Load a carrienderia by index
+bool JSONCarrienderiaHandler::load(size_t index)
 {
     if (index >= jsonArray.size())
     {
@@ -191,44 +134,12 @@ bool JSONCarrienderiaMenuHandler::load(size_t index)
     }
 
     carrienderia = jsonArray[index];
-
-    initializeBuffersAndCounters(carrienderia);
     return true;
 }
 
-// Save: This function will first check if the carrienderia exists. If it does, it will update the carrienderia with the new details.
-// If it doesn't, it will add the carrienderia to the JSON array.
-void JSONCarrienderiaMenuHandler::save()
+// Save carrienderia changes
+void JSONCarrienderiaHandler::save()
 {
-    for (auto& offering : carrienderia["Menu Offerings"])
-    {
-        std::string category = offering["Category"];
-        if (buffers.find(category) != buffers.end())
-        {
-            offering["Items"] = buffers[category];
-        }
-    }
-
-    // This is the important part of this function, which essentially updates that
-    // particular carrienderia that has been chosen to have its items to be added/edited/deleted
-    bool carrienderiaFound = false;
-    for (auto& item : jsonArray)
-    {
-        if (item["Name"] == carrienderia["Name"])
-        {
-            item = carrienderia;
-            carrienderiaFound = true;
-            break;
-        }
-    }
-
-    // In the improbable event that somehow this function list happens first instead of the setting up of the
-    // carrienderia details, then this is what will happen.
-    if (!carrienderiaFound)
-    {
-        jsonArray.push_back(carrienderia);
-    }
-
     std::ofstream outFile("CarriendariaList.json");
     if (!outFile.is_open())
     {
@@ -238,49 +149,3 @@ void JSONCarrienderiaMenuHandler::save()
     outFile << jsonArray.dump(4);
     outFile.close();
 }
-
-// General flow of the code in terms of pseudo code:
-// 1. Load carrienderia, this is where the user chooses which carrienderia they want to edit
-// -  facilitated through an external source providing the value for the index to choose which carienderia
-// -  Side note, there will be another function that would count the total amount of carrienderias and
-// -  send it to a function that would display the names of the carrienderias to choose from
-// 2. Manipulation of items in the carrienderia
-// - The buffers will be filled with the items coming from the carienderia.
-// - key "Items" will have its value pair be equal to the buffers json array for that specific category
-// + Avoids the problem of repeated items in the same category
-// + This streamlines the manipulation of items in the carrienderia as it is all stored in a buffer that is yet to be finalized.
-// 3. Get buffer items to show to user
-// - This is where the user would view the items in the buffer so that they can keep track of what they plan to add or possibly delete.
-// - the counters for each category will be used to keep track of how many items there are in each category, which will be the basis for the limit of what the user can enter for the index before being invalid
-// 4. Save carrienderia
-// -  This is where the user would save the changes by way of having the item keys have their value pairs be equal to the buffers of that category
-
-/* Template on how the potential code would look like:
-int main() {
-
-    JSONCarrienderiaMenuHandler handler;
-
-    if (handler.load("CarrienderiaList.json", 1)) {
-        std::cout << "Loaded " << carrienderia["Name"] <<  " successfully." << std::endl;
-    } else {
-        std::cout << "Failed to load Carrienderia 1." << std::endl;
-    }
-
-    // Example usage of adding items into categories
-    handler.addItem("Meals", "Pork Adobo", "Delicious pork adobo", 100);
-    handler.addItem("Meals", "Ten Colored Wings", "Divine and Gracious, Supreme", 999);
-    handler.addItem("Drinks", "Halo-Halo", "Refreshing halo-halo", 50);
-
-    // Example usage of edit item and delete item through index
-    int index = 1;
-    handler.editItem("Drinks", "Ambrosium", "Indulgence made Liquid", 50, --index);
-    handler.deleteItem("Drinks", --index);
-
-    // Finalizes all the changes and saves ii all into the JSON file
-    handler.save("CarrienderiaList.json");
-
-
-
-    return 0;
-}
-*/
