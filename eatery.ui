@@ -146,7 +146,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Name of Eatery</string>
+        <string>Jon's Eatery</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_49">
