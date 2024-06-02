@@ -107,10 +107,21 @@
             </property>
            </widget>
           </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit_status"/>
-          </item>
          </layout>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_status">
+          <item>
+           <property name="text">
+            <string>Open</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Close</string>
+           </property>
+          </item>
+         </widget>
         </item>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_8">

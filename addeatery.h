@@ -15,9 +15,6 @@ public:
     explicit AddEatery(QWidget *parent = nullptr);
     ~AddEatery();
 
-signals:
-    //void addEateryRequest();
-
 private slots:
     void on_pushButton_addEatery_clicked();
 

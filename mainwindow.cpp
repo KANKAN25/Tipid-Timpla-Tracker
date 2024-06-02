@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->setFixedSize(761, 461); // Main window's fixed size
 
     ui->horizontalSlider->setPageStep(1);
+    ui->stackedWidget->setCurrentWidget(ui->page_1); // Ensure Page 1 is shown when logging out, so when logging back in it will show page 1
 
     QPixmap pix(":/images/academia king.jpg"); // Load the pixmap from the resource
     // Get the dimensions of the label
@@ -37,7 +38,6 @@ void MainWindow::on_horizontalSlider_valueChanged(int value)
 
 void MainWindow::on_logout_clicked()
 {
-    ui->stackedWidget->setCurrentWidget(ui->page_1); // Ensure Page 1 is shown when logging out, so when logging back in it will show page 1
     emit loggedOut(); // Emit the loggedOut signal
 }
 

@@ -57,10 +57,10 @@
         <string>Software Name</string>
        </property>
       </widget>
-      <widget class="QLabel" name="username">
+      <widget class="QLabel" name="Username">
        <property name="geometry">
         <rect>
-         <x>530</x>
+         <x>610</x>
          <y>0</y>
          <width>121</width>
          <height>31</height>
@@ -77,40 +77,10 @@
         <enum>Qt::LeftToRight</enum>
        </property>
        <property name="text">
-        <string>User name</string>
+        <string>Username</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="logout">
-       <property name="geometry">
-        <rect>
-         <x>660</x>
-         <y>5</y>
-         <width>75</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Leelawadee UI Semilight</family>
-        </font>
-       </property>
-       <property name="autoFillBackground">
-        <bool>false</bool>
-       </property>
-       <property name="text">
-        <string>log out</string>
-       </property>
-       <property name="checkable">
-        <bool>false</bool>
-       </property>
-       <property name="autoRepeat">
-        <bool>false</bool>
-       </property>
-       <property name="autoDefault">
-        <bool>false</bool>
        </property>
       </widget>
      </widget>
