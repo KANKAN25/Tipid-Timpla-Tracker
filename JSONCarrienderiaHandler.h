@@ -21,6 +21,7 @@ public:
     bool deleteEatery(size_t index);
 
     // Load and Save functions that happened at start and beginning
+    void addEatery();
     bool load(const std::string& name);
     bool load(size_t index);
     void save();
@@ -30,6 +31,8 @@ public:
     void receiveAttribute(const std::string key, const float value); // This is for the input for average rating
     void receiveAttribute(const std::string key, const float value1, const float value2); // This is for the average price range, two float values of a minimum and a maximum tied into an array
 
+    ordered_json jsonArray;
+
 private:
 
     // Search for a carrienderia by name
@@ -38,7 +41,7 @@ private:
     void initializeBuffers();
 
     ordered_json carrienderia;
-    ordered_json jsonArray;
+
 
 };
 

@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
         handler.save();
 
     // Example usage of editing a carrienderia
-        handler.load(2);     // the third carrienderia
+        handler.load("Grand Hospitality");     // the third carrienderia
         handler.receiveAttribute("Name", "Grand Hospitality 2");
         handler.receiveAttribute("Average Rating", 5);
         handler.editEatery("Grand Hospitality");

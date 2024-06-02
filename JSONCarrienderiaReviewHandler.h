@@ -4,13 +4,10 @@
 #include "json.hpp"
 #include <vector>
 #include <string>
+#include <fstream>
+#include <iostream>
 
 using namespace std;
-using ordered_json = nlohmann::ordered_json;
-
-// Work in progress header file for carrienderia review handling
-// Treat header files as the same as the prototype functions done in C for better understanding
-
 using ordered_json = nlohmann::ordered_json;
 
 class JSONCarrienderiaReviewHandler
@@ -18,22 +15,20 @@ class JSONCarrienderiaReviewHandler
 public:
     JSONCarrienderiaReviewHandler();
 
-    void addReview(const std::string& category, const ordered_json& item);
-    void editReview(const std::string& category, size_t index, const ordered_json& item);
-    void deleteReview(const std::string& category, size_t index);
-    void save(const std::string& filename);
+    void receiveReview(const std::string user, const std::string review);
+    void editReview(const std::string user, std::string name);
+    void deleteReview(const std::string user);
 
-    void receiveReview(const std::string user, const std::string name, const std::string review);
+    bool findCarrienderiaByName(const ordered_json& jsonArray, const std::string& name, ordered_json& carrienderia);
+    bool load(const std::string& name);
+    void save();
 
-    const ordered_json& getItems(const std::string& category) const;
-
+    ordered_json jsonArray; // Buffers for each category as well as counters and items
 private:
     void initializeBuffers();
 
     ordered_json carrienderia;
-    ordered_json jsonArray;
-
-    std::unordered_map<std::string, ordered_json> buffers; // Buffers for each category as well as counters and items.
 };
+
 
 #endif // JSONCARRIENDERIAREVIEWHANDLER_H
