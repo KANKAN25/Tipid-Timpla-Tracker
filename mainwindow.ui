@@ -90,7 +90,7 @@
             <string>Name of Place</string>
            </property>
           </widget>
-          <widget class="QLabel" name="label_20">
+          <widget class="QLabel" name="label_Price_14">
            <property name="geometry">
             <rect>
              <x>4</x>
@@ -221,7 +221,7 @@
             <string>Name of Place</string>
            </property>
           </widget>
-          <widget class="QLabel" name="label_33">
+          <widget class="QLabel" name="label_Price_15">
            <property name="geometry">
             <rect>
              <x>4</x>
@@ -352,7 +352,7 @@
             <string>Name of Place</string>
            </property>
           </widget>
-          <widget class="QLabel" name="label_17">
+          <widget class="QLabel" name="label_Price_13">
            <property name="geometry">
             <rect>
              <x>4</x>
@@ -877,7 +877,7 @@
               </property>
              </widget>
             </widget>
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="pushButton_Confirm">
              <property name="geometry">
               <rect>
                <x>80</x>
@@ -963,7 +963,7 @@
             <string>Name of Place</string>
            </property>
           </widget>
-          <widget class="QLabel" name="label_3">
+          <widget class="QLabel" name="label_Price_10">
            <property name="geometry">
             <rect>
              <x>4</x>
@@ -1097,7 +1097,7 @@
             <string>Name of Place</string>
            </property>
           </widget>
-          <widget class="QLabel" name="label_8">
+          <widget class="QLabel" name="label_Price_11">
            <property name="geometry">
             <rect>
              <x>4</x>
@@ -1228,7 +1228,7 @@
             <string>Name of Place</string>
            </property>
           </widget>
-          <widget class="QLabel" name="label_11">
+          <widget class="QLabel" name="label_Price_12">
            <property name="geometry">
             <rect>
              <x>4</x>
@@ -1401,7 +1401,7 @@
             <string>Name of Place</string>
            </property>
           </widget>
-          <widget class="QLabel" name="label_111">
+          <widget class="QLabel" name="label_Price_17">
            <property name="geometry">
             <rect>
              <x>4</x>
@@ -1532,7 +1532,7 @@
             <string>Name of Place</string>
            </property>
           </widget>
-          <widget class="QLabel" name="label_114">
+          <widget class="QLabel" name="label_Price_18">
            <property name="geometry">
             <rect>
              <x>4</x>
@@ -1561,7 +1561,7 @@
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
-          <widget class="QLabel" name="label_115">
+          <widget class="QLabel" name="label_Rating_18">
            <property name="geometry">
             <rect>
              <x>3</x>
@@ -1663,7 +1663,7 @@
             <string>Name of Place</string>
            </property>
           </widget>
-          <widget class="QLabel" name="label_117">
+          <widget class="QLabel" name="label_Price_16">
            <property name="geometry">
             <rect>
              <x>4</x>

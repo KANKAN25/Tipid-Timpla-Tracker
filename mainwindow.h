@@ -35,6 +35,8 @@ private slots:
     void on_pushButton_Eatery_clicked();
     //    void on_loadJsonButton_clicked();
 
+    void on_pushButton_Confirm_clicked();
+
 private:
     Ui::MainWindow *ui;
     JSONCarrienderiaHandler *jsonHandler;

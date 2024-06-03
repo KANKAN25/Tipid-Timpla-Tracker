@@ -98,3 +98,64 @@ void MainWindow::loadEateryNames()
         }
     }
 }
+
+void MainWindow::on_pushButton_Confirm_clicked()
+{
+    int sliderValue = ui->horizontalSlider->value();
+    int lowerBound = sliderValue - 1;
+    int upperBound = sliderValue + 1;
+
+    jsonHandler->load("CarriendariaList.json");  // Reload the JSON file
+    auto eateries = jsonHandler->getAllEateries();
+
+    int index = 9;
+    for (const auto& eatery : eateries) {
+        if (index >= 18) {
+            break;
+        }
+
+        try {
+            int rating = eatery["Average Rating"];
+            if (rating >= lowerBound && rating <= upperBound) {
+                QString nameLabel = QString("label_EateryName_%1").arg(index + 1);
+                QString ratingLabel = QString("label_Rating_%1").arg(index + 1);
+                QString priceLabel = QString("label_Price_%1").arg(index + 1);
+
+                QLabel *nameLabelWidget = findChild<QLabel *>(nameLabel);
+                QLabel *ratingLabelWidget = findChild<QLabel *>(ratingLabel);
+                QLabel *priceLabelWidget = findChild<QLabel *>(priceLabel);
+
+                if (nameLabelWidget && ratingLabelWidget && priceLabelWidget) { // Updated
+                    nameLabelWidget->setText(QString::fromStdString(eatery["Name"]));
+                    ratingLabelWidget->setText(QString::number(rating));
+                    priceLabelWidget->clear(); // Updated
+                }
+                ++index;
+            }
+        } catch (const std::exception& e) {
+            qDebug() << "Error parsing eatery: " << e.what();
+        }
+    }
+
+    // Clear remaining labels if fewer than 9 eateries match
+    for (; index < 18; ++index) {
+        QString nameLabel = QString("label_EateryName_%1").arg(index + 1);
+        QString ratingLabel = QString("label_Rating_%1").arg(index + 1);
+        QString priceLabel = QString("label_Price_%1").arg(index + 1);
+
+        QLabel *nameLabelWidget = findChild<QLabel *>(nameLabel);
+        QLabel *ratingLabelWidget = findChild<QLabel *>(ratingLabel);
+        QLabel *priceLabelWidget = findChild<QLabel *>(priceLabel);
+
+        if (nameLabelWidget) {
+            nameLabelWidget->clear();
+        }
+        if (ratingLabelWidget) {
+            ratingLabelWidget->clear();
+        }
+        if (priceLabelWidget) {
+            priceLabelWidget->clear();
+        }
+    }
+}
+
