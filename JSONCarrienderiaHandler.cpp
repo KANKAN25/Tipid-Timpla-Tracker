@@ -118,7 +118,7 @@ bool JSONCarrienderiaHandler::load(const std::string& name)
 {
     if (!findCarrienderiaByName(jsonArray, name, carrienderia))
     {
-        std::cerr << "Carrienderia with name " << name << " not found." << std::endl;
+        // std::cerr << "Carrienderia with name " << name << " not found." << std::endl;
         return false;
     }
     return true;

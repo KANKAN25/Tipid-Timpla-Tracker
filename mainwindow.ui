@@ -5029,7 +5029,7 @@
          <rect>
           <x>10</x>
           <y>0</y>
-          <width>171</width>
+          <width>291</width>
           <height>31</height>
          </rect>
         </property>
@@ -5041,7 +5041,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Software Name</string>
+         <string>TIPID TIMPLA TRACKER</string>
         </property>
        </widget>
        <widget class="QLabel" name="mainWindowusername">
@@ -5064,7 +5064,7 @@
          <enum>Qt::LeftToRight</enum>
         </property>
         <property name="text">
-         <string>Username</string>
+         <string>User</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
