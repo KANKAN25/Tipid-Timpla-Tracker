@@ -96,3 +96,35 @@ void EditEatery::on_pushButton_done_clicked()
     this->hide();
 }
 
+
+void EditEatery::on_pushButton_addMenu_clicked()
+{
+    JSONCarrienderiaMenuHandler menus;
+
+    std::string eateryName = ui->lineEdit_eateryName->text().toStdString();
+    if(eateryName.empty()){
+        QMessageBox::warning(this, "No Eatery Name", "Please input eatery name!");
+        return;
+    }
+    menus.load(eateryName);
+
+    std::string menuName = ui->lineEdit_MenuName->text().toStdString();
+    double price = ui->lineEdit_Price->text().toDouble();
+    std::string details = ui->lineEdit_Details->text().toStdString();
+    std::string category = ui->comboBox_Category->currentText().toStdString();
+
+    if (menuName.empty() || price <= 0 || details.empty()) {
+        QMessageBox::warning(this, "Input Error", "All menu fields must be filled out and price must be positive.");
+        return;
+    }
+
+    menus.addItem(category, menuName, details, price);
+    menus.save();
+
+    QMessageBox::information(this, "Success", "Menu Added Successfully!");
+
+    ui->lineEdit_MenuName->clear();
+    ui->lineEdit_Price->clear();
+    ui->lineEdit_Details->clear();
+}
+

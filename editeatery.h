@@ -22,6 +22,8 @@ private slots:
 
     void on_pushButton_done_clicked();
 
+    void on_pushButton_addMenu_clicked();
+
 private:
     Ui::EditEatery *ui;
 };
