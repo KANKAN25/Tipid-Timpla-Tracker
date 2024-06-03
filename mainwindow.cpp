@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "JSONCarrienderiaHandler.h"
 #include <QPixmap>
 #include <QDebug>
 
@@ -7,6 +8,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , jsonHandler(new JSONCarrienderiaHandler())  // Initialize JSON handler
 {
     ui->setupUi(this);
     this->setFixedSize(761, 461); // Main window's fixed size
@@ -23,11 +25,15 @@ MainWindow::MainWindow(QWidget *parent)
     // Setup connections for navigating pages
     connect(ui->next_1, &QPushButton::clicked, this, &MainWindow::page2Widget);
     connect(ui->next_2, &QPushButton::clicked, this, &MainWindow::page1Widget);
+
+    // Load eatery names and set the labels
+    loadEateryNames();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete jsonHandler;  // Clean up JSON handler
 }
 
 void MainWindow::on_horizontalSlider_valueChanged(int value)
@@ -69,3 +75,26 @@ void MainWindow::on_pushButton_Eatery_clicked()
     connect(addEatery, &QObject::destroyed, addEatery, &QObject::deleteLater); // deallocates when closed
 }
 
+void MainWindow::loadEateryNames()
+{
+    jsonHandler->load("CarriendariaList.json");  // Load the JSON file
+    auto eateries = jsonHandler->getAllEateries();
+
+    // Print Name
+    for (int i = 9; i < 18; ++i) {
+        QString labelName = QString("label_EateryName_%1").arg(i + 1);
+        QLabel *label = findChild<QLabel *>(labelName);
+        if (label && i < eateries.size()) {
+            label->setText(QString::fromStdString(eateries[i]["Name"]));
+        }
+    }
+
+    // Print Rating
+    for (int i = 9; i < 18; ++i) {
+        QString labelName = QString("label_Rating_%1").arg(i + 1);
+        QLabel *label = findChild<QLabel *>(labelName);
+        if (label) {
+            label->setText(QString::fromStdString(eateries[i]["Average Rating"].dump()));
+        }
+    }
+}

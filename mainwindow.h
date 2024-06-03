@@ -9,6 +9,7 @@ using json = nlohmann::json;
 #include "login.h"
 #include "eatery.h"
 #include "addeatery.h"
+#include "JSONCarrienderiaHandler.h"
 
 namespace Ui {
 class MainWindow;
@@ -32,11 +33,13 @@ private slots:
     void page2Widget();
     void on_Place1_clicked();
     void on_pushButton_Eatery_clicked();
-//    void on_loadJsonButton_clicked();
+    //    void on_loadJsonButton_clicked();
 
 private:
     Ui::MainWindow *ui;
+    JSONCarrienderiaHandler *jsonHandler;
     void loadJsonData();
+    void loadEateryNames();  // New method to load eatery names
 };
 
-#endif
+#endif // MAINWINDOW_H

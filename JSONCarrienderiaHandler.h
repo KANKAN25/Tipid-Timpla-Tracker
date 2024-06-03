@@ -25,6 +25,7 @@ public:
     bool load(const std::string& name);
     bool load(size_t index);
     void save();
+    std::vector<ordered_json> getAllEateries() const;
 
     // Receive data from external sources and create an item JSON object
     void receiveAttribute(const std::string key, const std::string value);

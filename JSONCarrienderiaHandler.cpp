@@ -149,3 +149,8 @@ void JSONCarrienderiaHandler::save()
     outFile << jsonArray.dump(4);
     outFile.close();
 }
+
+std::vector<ordered_json> JSONCarrienderiaHandler::getAllEateries() const
+{
+    return jsonArray;
+}
