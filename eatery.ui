@@ -442,6 +442,19 @@
         </property>
        </column>
       </widget>
+      <widget class="QPushButton" name="pushButton_refresh">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>340</y>
+         <width>83</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Refresh</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </item>
