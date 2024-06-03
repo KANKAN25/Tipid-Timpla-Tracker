@@ -43,7 +43,7 @@ void EditEatery::on_pushButton_updateEatery_clicked()
         handler.receiveAttribute("Landmarks", landmarks);
     }
     if(!accomodations.empty()){
-        handler.receiveAttribute("Dining Accomodations", accomodations);
+        handler.receiveAttribute("Dining Accommodations", accomodations);
     }
 
     if (eateryName.empty() && address.empty() && landmarks.empty() && accomodations.empty()) {
