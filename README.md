@@ -1,1 +1,3 @@
-# qt-test
+# Tipid Timpla Tracker
+
+//finals project
